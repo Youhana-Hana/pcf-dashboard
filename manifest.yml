@@ -1,0 +1,9 @@
+applications:
+- name: metrics
+  instances: 1
+  memory: 1G
+  disk_quota: 1024M
+  command: node ./bin/www
+  env:
+    OPTIMIZE_MEMORY: "true"
+  stack: cflinuxfs2
