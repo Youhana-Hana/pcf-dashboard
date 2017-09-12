@@ -1,7 +1,18 @@
 {
-  "name": "demo",
-  "version": "0.0.0",
+  "name": "Bosch-dashboard",
+  "version": "0.0.1",
   "private": true,
+  "contributors": [
+    {
+      "name": "Youhaha Hana",
+      "email": "youhana.hana@emc.com"
+    }
+  ],
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.com:Youhana/Bosch-dashboard.git"
+  },
   "scripts": {
     "start": "node ./bin/www"
   },
@@ -10,7 +21,7 @@
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.3",
     "express": "~4.15.2",
-    "jade": "~1.11.0",
+    "pug": "~2.0.0-rc.4",
     "morgan": "~1.8.1",
     "serve-favicon": "~2.4.2"
   }
