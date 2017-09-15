@@ -1,5 +1,5 @@
 applications:
-- name: metrics
+- name: metrics2
   instances: 1
   memory: 1G
   disk_quota: 1024M
