@@ -52,7 +52,7 @@
             "upgradeErtBuildGlobalIdentifier": "52",
             "upgradeErtBuildUrl": "http://myconcourse-on-produs.com/builds/52",
             "lastSuccessfulUpgradeErtBuildUrl": "http://myconcourse-on-produs.com/builds/52",
-            "lastSuccessfulUpgradeErtBuildTimestamp": "<timestamp>"
+            "lastSuccessfulUpgradeErtBuildTimestamp": 1505575832000
         }
     }, {
         "id": "singapore-prod",
@@ -67,7 +67,7 @@
             "upgradeErtBuildGlobalIdentifier": "41",
             "upgradeErtBuildUrl": "http://myconcourse-on-prodsingapore.com/builds/41",
             "lastSuccessfulUpgradeErtBuildUrl": "http://myconcourse-on-prodsingapore.com/builds/40",
-            "lastSuccessfulUpgradeErtBuildTimestamp": "<timestamp>"
+            "lastSuccessfulUpgradeErtBuildTimestamp": 1505835032000
         }
     }, {
         "id": "us-t4",
@@ -82,7 +82,7 @@
             "upgradeErtBuildGlobalIdentifier": "56",
             "upgradeErtBuildUrl": "http://myconcourse-on-T4us.com/builds/56",
             "lastSuccessfulUpgradeErtBuildUrl": "http://myconcourse-on-T4us.com/builds/55",
-            "lastSuccessfulUpgradeErtBuildTimestamp": "<timestamp>",
+            "lastSuccessfulUpgradeErtBuildTimestamp": 1505748632000,
             "failedJobName": "configure-ert"
         }
     }]
