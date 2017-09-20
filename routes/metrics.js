@@ -1,8 +1,8 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const payload = require('./fixtures.json');
 
-router.get('/metrics', function(req, res, next) {
-  const payload = require('./fixtures.json');
+const router = express.Router();
+router.get('/metrics', (req, res) => {
   res.json(payload).status(200);
 });
 
