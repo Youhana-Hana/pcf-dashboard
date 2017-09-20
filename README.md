@@ -1,5 +1,5 @@
 # PCF-automation-status-dashboard
-This project created to enable two functionality:
+This project created to enable two functionalities:
  - API Gateway
  - Dashboard UI
 
