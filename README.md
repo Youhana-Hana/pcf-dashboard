@@ -30,6 +30,7 @@ $ npm run client build
 Browse the dashboard. It requires build client src first.
 ```sh
 $ npm start
+$ open http://localhost:3000/
 ```
 
 develop & update client src
