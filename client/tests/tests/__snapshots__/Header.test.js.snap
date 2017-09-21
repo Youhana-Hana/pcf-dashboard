@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test to see if  renders correctly 1`] = `
+<header
+  className="app-header"
+>
+  <div
+    className="header"
+  >
+    <div
+      className="col_1"
+    >
+      <img
+        src="test-file-stub"
+      />
+    </div>
+    <div
+      className="col_2 title"
+    >
+      Bosch IoT Cloud
+    </div>
+    <div
+      className="col_3 title"
+    >
+      PCF Automation
+    </div>
+    <div
+      className="col_4"
+    >
+      <img
+        src="test-file-stub"
+      />
+    </div>
+  </div>
+</header>
+`;

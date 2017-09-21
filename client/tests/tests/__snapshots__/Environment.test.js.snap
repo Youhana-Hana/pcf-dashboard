@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test to see if the environment renders correctly 1`] = `
+<div
+  className="col-12 col-sm-6 col-lg-4"
+>
+  <div
+    className="card-header"
+  >
+    <h2
+      className="mb-0"
+    >
+      US
+       
+      T4
+      <span
+        className="float-right badge badge-danger badge-pill"
+      >
+        <a
+          className="text-white"
+          href="http://myconcourse-on-T4us.com/builds/55"
+          target="_blank"
+        >
+           
+          56
+        </a>
+      </span>
+    </h2>
+  </div>
+  <div
+    className="text-white bg-primary card"
+  >
+    <div
+      className="card-body pb-0 card-block"
+    >
+      <div
+        className="padding-10 row"
+      >
+        <div
+          className="col-12 col-sm-6 col-lg-7"
+        >
+          <h3>
+            Current ERT Version
+          </h3>
+        </div>
+        <div
+          className="col-12 col-sm-6 col-lg-5"
+        >
+          <h3>
+            1.10.13
+          </h3>
+        </div>
+      </div>
+      <div
+        className="padding-10 row"
+      >
+        <div
+          className="col-12 col-sm-6 col-lg-7"
+        >
+          <h3>
+            Forthcoming ERT Version(S3)
+          </h3>
+        </div>
+        <div
+          className="col-12 col-sm-6 col-lg-5"
+        >
+          <h3>
+            1.10.17
+          </h3>
+        </div>
+      </div>
+      <div
+        className="padding-10 row"
+      >
+        <div
+          className="col-12 col-sm-6 col-lg-7"
+        >
+          <h3>
+            PCF Pipeline Version
+          </h3>
+        </div>
+        <div
+          className="col-12 col-sm-6 col-lg-5"
+        >
+          <h3>
+            1.15.1
+          </h3>
+        </div>
+      </div>
+      <div
+        className="padding-10 row"
+      >
+        <div
+          className="col-12 col-sm-6 col-lg-7"
+        >
+          <h3>
+            Last Successful
+          </h3>
+        </div>
+        <div
+          className="col-12 col-sm-6 col-lg-5"
+        >
+          <h3>
+            <a
+              className="text-white nav-link float-right"
+              href="http://myconcourse-on-T4us.com/builds/55"
+              target="_blank"
+            >
+              Mon Sep 18 2017
+            </a>
+          </h3>
+        </div>
+      </div>
+      <div
+        className="padding-10 row"
+      >
+        <div
+          className="col-12 col-sm-6 col-lg-7"
+        >
+          <h3>
+            Failed Job
+          </h3>
+        </div>
+        <div
+          className="col-12 col-sm-6 col-lg-5"
+        >
+          <h3>
+            <a
+              className="text-white nav-link float-right"
+              href="http://myconcourse-on-T4us.com/builds/55"
+              target="_blank"
+            >
+              configure-ert
+            </a>
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

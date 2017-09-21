@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test to see if renders correctly 1`] = `
+<div>
+  <div
+    className="card-header"
+  >
+    <h1
+      className="mb-0"
+    />
+  </div>
+  <div
+    className="text-white bg-primary card"
+  >
+    <div
+      className="card-body pb-0 card-block"
+    >
+      <div
+        className="padding-10 row"
+      >
+        <div
+          className="col-12 col-sm-6 col-lg-7"
+        >
+          <h3>
+            ert-1.11.*
+          </h3>
+        </div>
+        <div
+          className="col-12 col-sm-6 col-lg-5"
+        >
+          <h3>
+            <a
+              className="text-white nav-link float-right"
+              href="https://docs.pivotal.io/pivotalcf/1-11/pcf-releaseNotes/runtime-rn.html#1.11.10"
+              target="_blank"
+            >
+              1.11.10
+            </a>
+          </h3>
+        </div>
+      </div>
+      <div
+        className="padding-10 row"
+      >
+        <div
+          className="col-12 col-sm-6 col-lg-7"
+        >
+          <h3>
+            ert-1.10.*
+          </h3>
+        </div>
+        <div
+          className="col-12 col-sm-6 col-lg-5"
+        >
+          <h3>
+            <a
+              className="text-white nav-link float-right"
+              href="https://docs.pivotal.io/pivotalcf/1-10/pcf-releaseNotes/runtime-rn.html#1.10.24"
+              target="_blank"
+            >
+              1.10.24
+            </a>
+          </h3>
+        </div>
+      </div>
+      <div
+        className="padding-10 row"
+      >
+        <div
+          className="col-12 col-sm-6 col-lg-7"
+        >
+          <h3>
+            ert-1.9.*
+          </h3>
+        </div>
+        <div
+          className="col-12 col-sm-6 col-lg-5"
+        >
+          <h3>
+            <a
+              className="text-white nav-link float-right"
+              href="https://docs.pivotal.io/pivotalcf/1-9/pcf-releaseNotes/runtime-rn.html#1.9.37"
+              target="_blank"
+            >
+              1.9.37
+            </a>
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+

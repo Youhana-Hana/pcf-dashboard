@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test to see if  renders correctly 1`] = `
+<footer
+  className="app-footer"
+>
+  <a
+    href="#"
+  />
+  © 2017 Bosch IoT Cloud.
+  <span
+    className="float-right"
+  >
+    Powered by 
+    <a
+      href="#"
+    >
+      Bosch
+    </a>
+  </span>
+</footer>
+`;
