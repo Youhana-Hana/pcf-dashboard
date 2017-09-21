@@ -11,50 +11,50 @@ import Versions from '../../components/Versions/';
 import PivnetStore from '../../stores/Pivnet';
 
 class Pivnet extends Component {
-    constructor(props) {
-        super(props);
-        this.state =  {
-            ertVersions: [],
-            opsManagerVersions: []
-        };
+  constructor(props) {
+    super(props);
+    this.state =  {
+      ertVersions: [],
+      opsManagerVersions: []
+    };
 
-        this.onChange = this.onChange.bind(this);
-    }
+    this.onChange = this.onChange.bind(this);
+  }
 
-    componentWillMount() {
-        PivnetStore.addChangeListener(this.onChange);
-    }
+  componentWillMount() {
+    PivnetStore.addChangeListener(this.onChange);
+  }
 
-    componentWillUnmount() {
-        PivnetStore.removeChangeListener(this.onChange);
-    }
+  componentWillUnmount() {
+    PivnetStore.removeChangeListener(this.onChange);
+  }
 
 
-    onChange() {
-        this.setState({
-            ertVersions: PivnetStore.getErtVersions(),
-            opsManagerVersions: PivnetStore.getOpsManagerVersions()
-        });
-    }
+  onChange() {
+    this.setState({
+      ertVersions: PivnetStore.getErtVersions(),
+      opsManagerVersions: PivnetStore.getOpsManagerVersions()
+    });
+  }
   render() {
     return (
-        <Row>
+      <Row>
         <Col>
-        <Card>
-        <CardHeader>
-        <h1 className="mb-0">Pivnet</h1>
-        </CardHeader>
-        <CardBlock className="card-body">
-        
-        <Row>
-        <Col xs="12" sm="6" lg="5"><Versions versions={this.state.ertVersions} header= "ERT Versions"/></Col>
-        <Col xs="12" sm="6" lg="1"/>
-        <Col xs="12" sm="6" lg="5"><Versions versions={this.state.ertVersions} header= "OpsManager Versions"/></Col>
-        </Row>
-        </CardBlock>
-        </Card>
+          <Card>
+            <CardHeader>
+              <h1 className="mb-0">Pivnet</h1>
+            </CardHeader>
+            <CardBlock className="card-body">
+              
+              <Row>
+                <Col xs="12" sm="6" lg="5"><Versions versions={this.state.ertVersions} header= "ERT Versions"/></Col>
+                <Col xs="12" sm="6" lg="1"/>
+                <Col xs="12" sm="6" lg="5"><Versions versions={this.state.ertVersions} header= "OpsManager Versions"/></Col>
+              </Row>
+            </CardBlock>
+          </Card>
         </Col>
-        </Row>
+      </Row>
     )}
 }
 

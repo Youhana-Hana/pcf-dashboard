@@ -12,7 +12,7 @@ class Full extends Component {
         <div className="app-body">
           <main className="main">
             <Container fluid>
-            <Dashboard/>
+              <Dashboard/>
             </Container>
           </main>
         </div>

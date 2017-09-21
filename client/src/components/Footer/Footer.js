@@ -5,7 +5,7 @@ class Footer extends Component {
     return (
       <footer className="app-footer">
         <a href="#"></a>&copy; 2017 Bosch IoT Cloud.
-        <span className="float-right">Powered by <a href="#">Bosch</a></span>
+                                           <span className="float-right">Powered by <a href="#">Bosch</a></span>
       </footer>
     )
   }

@@ -6,29 +6,29 @@ import PivnetActions from '../../actions/PcfPipelines.js';
 const API_URL = '/metrics';
 
 class Dashboard extends Component {
-    tick() {
-        PivnetActions.loadPcfPipelines(API_URL);
-    }
+  tick() {
+    PivnetActions.loadPcfPipelines(API_URL);
+  }
 
-    componentDidMount() {
-        PivnetActions.loadPcfPipelines(API_URL);
-    }
-    
-    componentWillMount() {
-        this.interval = setInterval(this.tick, 10000);
-    }
+  componentDidMount() {
+    PivnetActions.loadPcfPipelines(API_URL);
+  }
+  
+  componentWillMount() {
+    this.interval = setInterval(this.tick, 10000);
+  }
 
-    componentWillUnmount() {
-        clearInterval(this.interval);
-    }
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
 
   render() {
-      return (
-              <div className="animated fadeIn margin-10">
-              <Pivnet/>
-              <Environments/>
-              </div>
-      )
+    return (
+      <div className="animated fadeIn margin-10">
+        <Pivnet/>
+        <Environments/>
+      </div>
+    )
   }
 }
 
