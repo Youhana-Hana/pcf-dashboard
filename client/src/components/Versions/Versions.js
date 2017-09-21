@@ -11,50 +11,26 @@ import {
 } from "reactstrap";
 
 import CardRow from '../CardRow/';
-import PivnetStore from '../../stores/Pivnet';
 
-class Pivnet extends Component {
-    constructor(props) {
-        super(props);
-        this.state =  {
-            ertVersions: []
-        };
-
-        this.onChange = this.onChange.bind(this);
-    }
-
-    componentWillMount() {
-        PivnetStore.addChangeListener(this.onChange);
-    }
-
-    componentWillUnmount() {
-        PivnetStore.removeChangeListener(this.onChange);
-    }
-
-
-    onChange() {
-        this.setState({
-            ertVersions: PivnetStore.getVersions()
-        });
-    }
-
+class Versions extends Component {
   render() {
       return (
           <div>
               <CardHeader>
 
-              <h1 className="mb-0">ERT Versions</h1>
+              <h1 className="mb-0">{this.props.header}</h1>
 
           </CardHeader>
               <Card className="text-white bg-primary">
               <CardBlock className="card-body pb-0">
               {
-                  this.state.ertVersions.map((version) => {
+                  this.props.versions.map((version) => {
                       let row = {
                           label: version.id,
                           value: version.latest,
                           url: version.releaseNotesUrl
                       };
+
                       return <CardRow row= {row} key={version.id}></CardRow>;
                   })
               }
@@ -65,4 +41,4 @@ class Pivnet extends Component {
   }
 }
 
-export default Pivnet;
+export default Versions;

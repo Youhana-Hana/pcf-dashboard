@@ -19,7 +19,7 @@ class CardRow extends Component {
               </Col>
               <Col xs="12" sm="6" lg="5">
               <h3>
-              { this.url ? <a href={this.url} className="text-white nav-link float-right" target="_blank">{value}</a> : value }
+              { url ? <a href={url} className="text-white nav-link float-right" target="_blank">{value}</a> : value }
               </h3>
               </Col>
               </Row>
