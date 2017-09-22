@@ -41,6 +41,11 @@ develop & update client src
 $ npm run dev
 ```
 
+run client tests
+```sh
+$ npm run client test
+```
+
 For production environments PCF ...
 Please login to your pcf account.
 Update manifest.yaml to change production settings (RAM or storage).
