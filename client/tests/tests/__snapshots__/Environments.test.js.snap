@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Environments test to see if the environments renders correctly 1`] = `
+<Row
+  tag="div"
+>
+  <Col
+    tag="div"
+    widths={
+      Array [
+        "xs",
+        "sm",
+        "md",
+        "lg",
+        "xl",
+      ]
+    }
+  >
+    <Card
+      tag="div"
+    >
+      <CardHeader
+        tag="div"
+      >
+        <h1
+          className="mb-0"
+        >
+          Environments
+        </h1>
+      </CardHeader>
+      <CardBlock
+        className="card-body"
+        tag="div"
+      >
+        <Row
+          tag="div"
+        >
+          <Environment
+            env={
+              Object {
+                "currentErtVersion": "1.10.13",
+                "env": "T4",
+                "id": "us-t4",
+                "latestErtVersionInS3": "1.10.17",
+                "pcfPipelineStatus": Object {
+                  "failedJobName": "configure-ert",
+                  "lastSuccessfulUpgradeErtBuildTimestamp": 1505748632000,
+                  "lastSuccessfulUpgradeErtBuildUrl": "http://myconcourse-on-T4us.com/builds/55",
+                  "status": "failed",
+                  "upgradeErtBuildGlobalIdentifier": "56",
+                  "upgradeErtBuildNumber": "22",
+                  "upgradeErtBuildUrl": "http://myconcourse-on-T4us.com/builds/56",
+                },
+                "pcfPipelineVersion": "1.15.1",
+                "region": "US",
+              }
+            }
+            key="us-t4"
+          />
+          <Environment
+            env={
+              Object {
+                "currentErtVersion": "1.10.13",
+                "env": "T5",
+                "id": "us-t5",
+                "latestErtVersionInS3": "1.10.17",
+                "pcfPipelineStatus": Object {
+                  "failedJobName": "configure-ert",
+                  "lastSuccessfulUpgradeErtBuildTimestamp": 1505748632000,
+                  "lastSuccessfulUpgradeErtBuildUrl": "http://myconcourse-on-T4us.com/builds/55",
+                  "status": "failed",
+                  "upgradeErtBuildGlobalIdentifier": "56",
+                  "upgradeErtBuildNumber": "22",
+                  "upgradeErtBuildUrl": "http://myconcourse-on-T4us.com/builds/56",
+                },
+                "pcfPipelineVersion": "1.15.1",
+                "region": "US",
+              }
+            }
+            key="us-t5"
+          />
+        </Row>
+      </CardBlock>
+    </Card>
+  </Col>
+</Row>
+`;

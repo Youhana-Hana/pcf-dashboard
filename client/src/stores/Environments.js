@@ -6,7 +6,7 @@ const CHANGE_EVENT  = 'change';
 
 let _environments = [];
 
-function setEnvironemnts(environments) {
+function setEnvironments(environments) {
   _environments = environments;
 }
 
@@ -34,7 +34,7 @@ const EnvStore = new EnvStoreClass();
 EnvStore.dispatchToken = AppDispatcher.register(action => {
   switch(action.actionType) {
   case Constants.RECIEVE_PAYLOAD:
-    setEnvironemnts(action.data.environments);
+    setEnvironments(action.data.environments);
     EnvStore.emitChange();
   }
 });
