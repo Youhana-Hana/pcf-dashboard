@@ -49,7 +49,7 @@ class PivnetVersions extends Component {
               <Row>
                 <Col xs="12" sm="6" lg="5"><Pivnet versions={this.state.ertVersions} header= "ERT Versions"/></Col>
                 <Col xs="12" sm="6" lg="1"/>
-                <Col xs="12" sm="6" lg="5"><Pivnet versions={this.state.ertVersions} header= "OpsManager Versions"/></Col>
+                <Col xs="12" sm="6" lg="5"><Pivnet versions={this.state.opsManagerVersions} header= "OpsManager Versions"/></Col>
               </Row>
             </CardBlock>
           </Card>
