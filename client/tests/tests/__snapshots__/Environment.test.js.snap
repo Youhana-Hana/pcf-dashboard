@@ -94,30 +94,6 @@ exports[`test to see if the environment renders correctly 1`] = `
           className="col-12 col-sm-6 col-lg-7"
         >
           <h3>
-            Last Successful
-          </h3>
-        </div>
-        <div
-          className="col-12 col-sm-6 col-lg-5"
-        >
-          <h3>
-            <a
-              className="text-white nav-link float-right"
-              href="http://myconcourse-on-T4us.com/builds/55"
-              target="_blank"
-            >
-              Mon Sep 18 2017
-            </a>
-          </h3>
-        </div>
-      </div>
-      <div
-        className="padding-10 row"
-      >
-        <div
-          className="col-12 col-sm-6 col-lg-7"
-        >
-          <h3>
             Failed Job
           </h3>
         </div>
