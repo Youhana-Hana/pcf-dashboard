@@ -39,16 +39,16 @@ class Environment extends Component {
 
 
   render() {
-    let url = this.props.env.pcfPipelineStatus.lastSuccessfulUpgradeErtBuildUrl;
-    let buildNumber = this.props.env.pcfPipelineStatus.upgradeErtBuildGlobalIdentifier;
-    let failedJobName = this.props.env.pcfPipelineStatus.failedJobName;
+    let url = this.props.env.buildInfo.buildUrl;
+    let buildNumber = this.props.env.buildInfo.buildGlobalIdentifier;
+    let failedJobName = this.props.env.buildInfo.failedJobName;
 
     return (
       <Col xs="12" sm="6" lg="4">
         <CardHeader>
           <h2 className="mb-0">
             {this.props.env.region} {this.props.env.env}
-            <Badge pill color={this.getStatusColor(this.props.env.pcfPipelineStatus.status)} className="float-right"><a href={url} className="text-white" target="_blank"> {buildNumber}</a></Badge>
+            <Badge pill color={this.getStatusColor(this.props.env.pipelineStatus)} className="float-right"><a href={url} className="text-white" target="_blank"> {buildNumber}</a></Badge>
           </h2>
         </CardHeader>
 
@@ -70,4 +70,3 @@ class Environment extends Component {
 }
 
 export default Environment;
-

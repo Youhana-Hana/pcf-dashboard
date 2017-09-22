@@ -10,13 +10,12 @@ const environment = {
   "currentErtVersion": "1.10.13",
   "latestErtVersionInS3": "1.10.17",
   "pcfPipelineVersion": "1.15.1",
-  "pcfPipelineStatus": {
-    "status": "failed",
-    "upgradeErtBuildNumber": "22",
-    "upgradeErtBuildGlobalIdentifier": "56",
-    "upgradeErtBuildUrl": "http://myconcourse-on-T4us.com/builds/56",
-    "lastSuccessfulUpgradeErtBuildUrl": "http://myconcourse-on-T4us.com/builds/55",
-    "lastSuccessfulUpgradeErtBuildTimestamp": 1505748632000,
+  "pipelineStatus": "failed",
+  "buildInfo": {
+    "pipelineName": "upgrade-tile-ert",
+    "buildNumber": "22",
+    "buildGlobalIdentifier": "56",
+    "buildUrl": "http://myconcourse-on-T4us.com/builds/55",
     "failedJobName": "configure-ert"
   }
 };
