@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Pivnet from '../Pivnet/Pivnet';
+import PivnetVersions from '../Pivnet/PivnetVersions';
 import Environments from '../Environments/Environments';
 import PivnetActions from '../../actions/PcfPipelines.js';
 
@@ -13,7 +13,7 @@ class Dashboard extends Component {
   componentDidMount() {
     PivnetActions.loadPcfPipelines(API_URL);
   }
-  
+
   componentWillMount() {
     this.interval = setInterval(this.tick, 10000);
   }
@@ -25,7 +25,7 @@ class Dashboard extends Component {
   render() {
     return (
       <div className="animated fadeIn margin-10">
-        <Pivnet/>
+        <PivnetVersions/>
         <Environments/>
       </div>
     )
