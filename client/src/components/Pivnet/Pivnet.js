@@ -12,7 +12,7 @@ import {
 
 import CardRow from '../CardRow/';
 
-class Versions extends Component {
+class Pivnet extends Component {
   render() {
     return (
       <div>
@@ -41,4 +41,4 @@ class Versions extends Component {
   }
 }
 
-export default Versions;
+export default Pivnet;

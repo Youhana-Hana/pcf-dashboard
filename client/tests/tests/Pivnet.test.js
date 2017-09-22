@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Versions  from '../../src/components/Versions/';
+import Pivnet  from '../../src/components/Pivnet/';
 
 
 const ertVersions= [{
@@ -25,7 +25,7 @@ const ertVersions= [{
 
 it('test to see if renders correctly', () => {
   const versions = renderer
-  .create(<Versions versions={ertVersions} />)
+  .create(<Pivnet versions={ertVersions} />)
   .toJSON();
   expect(versions).toMatchSnapshot();
 });
