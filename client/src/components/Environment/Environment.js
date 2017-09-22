@@ -39,7 +39,6 @@ class Environment extends Component {
 
 
   render() {
-    let timestamp = this.props.env.pcfPipelineStatus.lastSuccessfulUpgradeErtBuildTimestamp;
     let url = this.props.env.pcfPipelineStatus.lastSuccessfulUpgradeErtBuildUrl;
     let buildNumber = this.props.env.pcfPipelineStatus.upgradeErtBuildGlobalIdentifier;
     let failedJobName = this.props.env.pcfPipelineStatus.failedJobName;
@@ -56,12 +55,11 @@ class Environment extends Component {
         <Card className="text-white bg-primary">
           <CardBlock className="card-body pb-0">
             <CardRow row= {{label:"Current ERT Version", value: this.props.env.currentErtVersion}} key={this.props.env.currentErtVersion}></CardRow>
-            
+
             <CardRow row= {{label:"Forthcoming ERT Version(S3)", value: this.props.env.latestErtVersionInS3}} key={this.props.env.latestErtVersionInS3}></CardRow>
 
             <CardRow row= {{label:"PCF Pipeline Version", value: this.props.env.pcfPipelineVersion}} key={this.props.env.pcfPipelineVersion}></CardRow>
-            
-            <CardRow row= {{label:"Last Successful", value: new Date(timestamp).toDateString(), url: url }} key={timestamp}></CardRow>
+
             {failedJobName ?
              <CardRow row= {{label:"Failed Job", value: failedJobName, url: url }} key={failedJobName}></CardRow> : ""}
           </CardBlock>
