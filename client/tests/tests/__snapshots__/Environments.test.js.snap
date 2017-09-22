@@ -38,20 +38,22 @@ exports[`Environments test to see if the environments renders correctly 1`] = `
           <Environment
             env={
               Object {
-                "currentErtVersion": "1.10.13",
                 "env": "T4",
                 "id": "us-t4",
-                "latestErtVersionInS3": "1.10.17",
-                "pcfPipelineStatus": Object {
-                  "failedJobName": "configure-ert",
-                  "lastSuccessfulUpgradeErtBuildTimestamp": 1505748632000,
-                  "lastSuccessfulUpgradeErtBuildUrl": "http://myconcourse-on-T4us.com/builds/55",
-                  "status": "failed",
-                  "upgradeErtBuildGlobalIdentifier": "56",
-                  "upgradeErtBuildNumber": "22",
-                  "upgradeErtBuildUrl": "http://myconcourse-on-T4us.com/builds/56",
+                "products": Object {
+                  "buildInfo": Object {
+                    "buildGlobalIdentifier": "56",
+                    "buildNumber": "22",
+                    "buildUrl": "http://myconcourse-on-T4us.com/builds/56",
+                    "failedJobName": "configure-ert",
+                    "pipelineName": "upgrade-tile-ert",
+                  },
+                  "currentVersion": "1.10.13",
+                  "latestVersionInS3": "1.10.18",
+                  "name": "elastic-runtime",
+                  "pcfPipelineVersion": "1.15.1",
+                  "pipelineStatus": "failed",
                 },
-                "pcfPipelineVersion": "1.15.1",
                 "region": "US",
               }
             }
@@ -60,20 +62,22 @@ exports[`Environments test to see if the environments renders correctly 1`] = `
           <Environment
             env={
               Object {
-                "currentErtVersion": "1.10.13",
                 "env": "T5",
                 "id": "us-t5",
-                "latestErtVersionInS3": "1.10.17",
-                "pcfPipelineStatus": Object {
-                  "failedJobName": "configure-ert",
-                  "lastSuccessfulUpgradeErtBuildTimestamp": 1505748632000,
-                  "lastSuccessfulUpgradeErtBuildUrl": "http://myconcourse-on-T4us.com/builds/55",
-                  "status": "failed",
-                  "upgradeErtBuildGlobalIdentifier": "56",
-                  "upgradeErtBuildNumber": "22",
-                  "upgradeErtBuildUrl": "http://myconcourse-on-T4us.com/builds/56",
+                "products": Object {
+                  "buildInfo": Object {
+                    "buildGlobalIdentifier": "56",
+                    "buildNumber": "22",
+                    "buildUrl": "http://myconcourse-on-T4us.com/builds/56",
+                    "failedJobName": "configure-ert",
+                    "pipelineName": "upgrade-tile-ert",
+                  },
+                  "currentVersion": "1.10.13",
+                  "latestVersionInS3": "1.10.18",
+                  "name": "elastic-runtime",
+                  "pcfPipelineVersion": "1.15.1",
+                  "pipelineStatus": "failed",
                 },
-                "pcfPipelineVersion": "1.15.1",
                 "region": "US",
               }
             }

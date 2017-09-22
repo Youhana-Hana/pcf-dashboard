@@ -12,35 +12,39 @@ describe('Environments', () => {
     "id": "us-t4",
     "env": "T4",
     "region": "US",
-    "currentErtVersion": "1.10.13",
-    "latestErtVersionInS3": "1.10.17",
-    "pcfPipelineVersion": "1.15.1",
-    "pcfPipelineStatus": {
-      "status": "failed",
-      "upgradeErtBuildNumber": "22",
-      "upgradeErtBuildGlobalIdentifier": "56",
-      "upgradeErtBuildUrl": "http://myconcourse-on-T4us.com/builds/56",
-      "lastSuccessfulUpgradeErtBuildUrl": "http://myconcourse-on-T4us.com/builds/55",
-      "lastSuccessfulUpgradeErtBuildTimestamp": 1505748632000,
-      "failedJobName": "configure-ert"
+    "products": {
+      "name": "elastic-runtime",
+      "currentVersion": "1.10.13",
+      "latestVersionInS3": "1.10.18",
+      "pcfPipelineVersion": "1.15.1",
+      "pipelineStatus": "failed",
+      "buildInfo": {
+        "pipelineName": "upgrade-tile-ert",
+        "buildNumber": "22",
+        "buildGlobalIdentifier": "56",
+        "buildUrl": "http://myconcourse-on-T4us.com/builds/56",
+        "failedJobName": "configure-ert"
+      }
     }
   }, {
-    "id": "us-t5",
-    "env": "T5",
-    "region": "US",
-    "currentErtVersion": "1.10.13",
-    "latestErtVersionInS3": "1.10.17",
-    "pcfPipelineVersion": "1.15.1",
-    "pcfPipelineStatus": {
-      "status": "failed",
-      "upgradeErtBuildNumber": "22",
-      "upgradeErtBuildGlobalIdentifier": "56",
-      "upgradeErtBuildUrl": "http://myconcourse-on-T4us.com/builds/56",
-      "lastSuccessfulUpgradeErtBuildUrl": "http://myconcourse-on-T4us.com/builds/55",
-      "lastSuccessfulUpgradeErtBuildTimestamp": 1505748632000,
-      "failedJobName": "configure-ert"
-    }
-  }];
+      "id": "us-t5",
+      "env": "T5",
+      "region": "US",
+      "products": {
+        "name": "elastic-runtime",
+        "currentVersion": "1.10.13",
+        "latestVersionInS3": "1.10.18",
+        "pcfPipelineVersion": "1.15.1",
+        "pipelineStatus": "failed",
+        "buildInfo": {
+          "pipelineName": "upgrade-tile-ert",
+          "buildNumber": "22",
+          "buildGlobalIdentifier": "56",
+          "buildUrl": "http://myconcourse-on-T4us.com/builds/56",
+          "failedJobName": "configure-ert"
+        }
+      }
+    }]
 
   let wrapper;
 
