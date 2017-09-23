@@ -25,7 +25,7 @@ $ cd pcf-automation-status-dashboard
 $ npm i && cd client && npm i && cd ..
 ```
 
-Start the API gatway and browse the dashboard
+Start the API gateway and browse the dashboard
 ```sh
 $ npm start
 $ open http://localhost:3000/
@@ -56,3 +56,18 @@ $ npm run client build
 $ cf login
 $ cf push
 ```
+
+### CI/CD
+
+Build and deploy to PCF with Concourse
+
+Preparing to set the pipeline..
+* Create a local yaml file outside of this repo for config and creds (name it something like `settings.yml`)
+  * Use the fields as defined in the template [ci/params.yml](ci/params.yml). Do NOT populate `params.yml` and commit to git!
+* Create some env vars
+  * `CONCOURSE_TARGET=?` # alias name for target concourse for local fly usage>>
+  * `PIPELINE_NAME=` # preferred name which will appear in Concourse GUI and serves as the reference for fly e.g. pcf-automation-dashboard-status
+  * `SETTINGS_YAML_FILE=?` # local file containing config and creds
+* Clone and `cd` to this repo
+* `fly -t $CONCOURSE_TARGET login`
+* Finally, set the pipeline with `fly -t $CONCOURSE_TARGET sp -p $PIPELINE_NAME -c ci/pipeline.yml -l $SETTINGS_YAML_FILE`

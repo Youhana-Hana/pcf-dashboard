@@ -46,6 +46,7 @@ jobs:
         - -exc
         - |
           cd pcf-automation-status-dashboard
+          npm i && cd client && npm i && cd ..
           npm run client build
   - put: pcf
     params:
