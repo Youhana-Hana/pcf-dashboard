@@ -59,9 +59,9 @@ resources:
   type: git
   source:
     branch: master
-    uri: ((dashboard_uri))
-    username: ((dashboard_username))
-    password: ((dashboard_password))
+    uri: ((dashboard_git_uri))
+    username: ((dashboard_git_username))
+    password: ((dashboard_git_password))
 - name: pcf
   type: cf
   source:

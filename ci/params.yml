@@ -1,6 +1,6 @@
-dashboard_uri: # <host>/pcf-automation-status-dashboard
-dashboard_username: # username
-dashboard_password: # password
+dashboard_git_uri: # <host>/pcf-automation-status-dashboard
+dashboard_git_username: # username
+dashboard_git_password: # password
 
 pcf-api:
 pcf-organization:
