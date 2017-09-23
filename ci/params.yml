@@ -1,0 +1,9 @@
+dashboard_uri: # <host>/pcf-automation-status-dashboard
+dashboard_username: # username
+dashboard_password: # password
+
+pcf-api:
+pcf-organization:
+pcf-space:
+pcf-deploy-username:
+pcf-deploy-password:

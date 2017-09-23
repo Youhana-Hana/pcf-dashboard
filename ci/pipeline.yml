@@ -1,0 +1,72 @@
+jobs:
+- name: unit-tests
+  serial: true
+  public: true
+  plan:
+  - get: pcf-automation-status-dashboard
+    trigger: true
+  - task: run-unit-tests
+    config:
+      platform: linux
+      image_resource:
+        type: docker-image
+        source:
+          repository: node
+      inputs:
+        - name: pcf-automation-status-dashboard
+      run:
+        path: sh
+        args:
+        - -exc
+        - |
+          cd pcf-automation-status-dashboard
+          npm i && cd client && npm i && cd ..
+          npm run client test
+
+- name: build-client-and-deploy-app
+  serial: true
+  public: true
+  plan:
+  - get: pcf-automation-status-dashboard
+    trigger: true
+    passed:
+      - unit-tests
+  - task: build-client-and-deploy
+    config:
+      platform: linux
+      image_resource:
+        type: docker-image
+        source:
+          repository: node
+      inputs:
+        - name: pcf-automation-status-dashboard
+      run:
+        path: sh
+        args:
+        - -exc
+        - |
+          cd pcf-automation-status-dashboard
+          npm run client build
+  - put: pcf
+    params:
+      manifest: pcf-automation-status-dashboard/manifest.yml
+      path: pcf-automation-status-dashboard
+      current_app_name: pcf-automation-status-dashboard
+
+resources:
+- name: pcf-automation-status-dashboard
+  type: git
+  source:
+    branch: master
+    uri: ((dashboard_uri))
+    username: ((dashboard_username))
+    password: ((dashboard_password))
+- name: pcf
+  type: cf
+  source:
+    api: {{pcf-api}}
+    organization: {{pcf-organization}}
+    space: {{pcf-space}}
+    username: {{pcf-deploy-username}}
+    password: {{pcf-deploy-password}}
+    skip_cert_check: true
