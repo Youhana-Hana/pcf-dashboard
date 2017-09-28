@@ -10,7 +10,8 @@ const environment = {
   "products": {
     "name": "elastic-runtime",
     "currentVersion": "1.10.13",
-    "latestVersionInS3": "1.10.17",
+    "stagedVersion": "",
+    "currentVersionInS3": "1.10.17",
     "pcfPipelineVersion": "1.15.1",
     "pipelineStatus": "failed",
     "buildInfo": {

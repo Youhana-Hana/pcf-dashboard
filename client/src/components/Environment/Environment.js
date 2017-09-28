@@ -56,7 +56,7 @@ class Environment extends Component {
           <CardBlock className="card-body pb-0">
             <CardRow row= {{label:"Current ERT Version", value: this.props.env.products.currentVersion}} key={this.props.env.products.currentVersion}></CardRow>
 
-            <CardRow row= {{label:"Forthcoming ERT Version(S3)", value: this.props.env.products.latestVersionInS3}} key={this.props.env.products.latestVersionInS3}></CardRow>
+            <CardRow row= {{label:"Forthcoming ERT Version(S3)", value: this.props.env.products.currentVersionInS3}} key={this.props.env.products.currentVersionInS3}></CardRow>
 
             <CardRow row= {{label:"PCF Pipeline Version", value: this.props.env.products.pcfPipelineVersion}} key={this.props.env.products.pcfPipelineVersion}></CardRow>
 

@@ -15,7 +15,8 @@ describe('Environments', () => {
     "products": {
       "name": "elastic-runtime",
       "currentVersion": "1.10.13",
-      "latestVersionInS3": "1.10.18",
+      "stagedVersion": "",
+      "currentVersionInS3": "1.10.18",
       "pcfPipelineVersion": "1.15.1",
       "pipelineStatus": "failed",
       "buildInfo": {
@@ -33,7 +34,8 @@ describe('Environments', () => {
       "products": {
         "name": "elastic-runtime",
         "currentVersion": "1.10.13",
-        "latestVersionInS3": "1.10.18",
+        "stagedVersion": "",
+        "currentVersionInS3": "1.10.18",
         "pcfPipelineVersion": "1.15.1",
         "pipelineStatus": "failed",
         "buildInfo": {
@@ -58,7 +60,7 @@ describe('Environments', () => {
     EnvironmentStore.getEnvironments = jest.fn(() => {
       return environments;
     })
-    
+
     EnvironmentStore.addChangeListener = jest.fn((callback) => {
       callback();
     })
@@ -84,11 +86,11 @@ describe('Environments', () => {
     wrapper.setState({environments: environments});
 
     const t4= wrapper.find('Environment').first();
-    
+
     expect(t4.props().env).toEqual(environments[0]);
     expect(t4.key()).toEqual(environments[0].id);
   })
-  
+
   it('should render last environment', () => {
     wrapper.setState({environments: environments});
 
@@ -97,10 +99,10 @@ describe('Environments', () => {
     expect(t5.props().env).toEqual(environments[1]);
     expect(t5.key()).toEqual(environments[1].id);
   })
-  
+
   it('test to see if the environments renders correctly', () => {
     wrapper.setState({environments: environments});
-    
+
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
