@@ -10,7 +10,7 @@ jest.mock('../../src/stores/Environments.js');
 describe('Environments', () => {
   const environments = [{
     "id": "us-t4",
-    "env": "T4",
+    "foundation": "T4",
     "region": "US",
     "products": {
       "name": "elastic-runtime",
@@ -29,7 +29,7 @@ describe('Environments', () => {
     }
   }, {
       "id": "us-t5",
-      "env": "T5",
+      "foundation": "T5",
       "region": "US",
       "products": {
         "name": "elastic-runtime",

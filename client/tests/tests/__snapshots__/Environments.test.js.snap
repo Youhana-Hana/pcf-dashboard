@@ -38,7 +38,7 @@ exports[`Environments test to see if the environments renders correctly 1`] = `
           <Environment
             env={
               Object {
-                "env": "T4",
+                "foundation": "T4",
                 "id": "us-t4",
                 "products": Object {
                   "buildInfo": Object {
@@ -63,7 +63,7 @@ exports[`Environments test to see if the environments renders correctly 1`] = `
           <Environment
             env={
               Object {
-                "env": "T5",
+                "foundation": "T5",
                 "id": "us-t5",
                 "products": Object {
                   "buildInfo": Object {

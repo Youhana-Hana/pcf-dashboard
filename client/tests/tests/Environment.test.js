@@ -5,7 +5,7 @@ import Environment  from '../../src/components/Environment/';
 
 const environment = {
   "id": "us-t4",
-  "env": "T4",
+  "foundation": "T4",
   "region": "US",
   "products": {
     "name": "elastic-runtime",

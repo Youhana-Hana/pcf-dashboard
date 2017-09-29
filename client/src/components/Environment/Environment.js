@@ -48,7 +48,7 @@ class Environment extends Component {
       <Col xs="12" sm="6" lg="4">
         <CardHeader>
           <h2 className="mb-0">
-            {this.props.env.region} {this.props.env.env}
+            {this.props.env.region} {this.props.env.foundation}
             <Badge pill color={this.getStatusColor(this.props.env.products.pipelineStatus)} className="float-right"><a href={url} className="text-white" target="_blank"> {buildNumber}</a></Badge>
           </h2>
         </CardHeader>

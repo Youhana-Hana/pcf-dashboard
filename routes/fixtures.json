@@ -41,7 +41,7 @@
     },
     "environments": [{
         "id": "us-prod",
-        "env": "PROD",
+        "foundation": "PROD",
         "region": "US",
         "products": {
           "name": "elastic-runtime",
@@ -59,7 +59,7 @@
         }
     }, {
         "id": "singapore-prod",
-        "env": "PROD",
+        "foundation": "PROD",
         "region": "Singapore",
         "products": {
           "name": "elastic-runtime",
@@ -77,7 +77,7 @@
         }
     }, {
         "id": "us-t4",
-        "env": "T4",
+        "foundation": "T4",
         "region": "US",
         "products": {
           "name": "elastic-runtime",
