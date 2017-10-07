@@ -38,13 +38,13 @@ exports[`Environments test to see if the environments renders correctly 1`] = `
           <Environment
             env={
               Object {
-                "foundation": "T4",
-                "id": "us-t4",
+                "foundation": "T3",
+                "id": "us-t3",
                 "products": Object {
                   "buildInfo": Object {
                     "buildGlobalIdentifier": "56",
                     "buildNumber": "22",
-                    "buildUrl": "http://myconcourse-on-T4us.com/builds/56",
+                    "buildUrl": "http://myconcourse-on-us-t3.com/builds/56",
                     "failedJobName": "configure-ert",
                     "pipelineName": "upgrade-tile-ert",
                   },
@@ -58,18 +58,18 @@ exports[`Environments test to see if the environments renders correctly 1`] = `
                 "region": "US",
               }
             }
-            key="us-t4"
+            key="us-t3"
           />
           <Environment
             env={
               Object {
-                "foundation": "T5",
-                "id": "us-t5",
+                "foundation": "prod",
+                "id": "us-prod",
                 "products": Object {
                   "buildInfo": Object {
                     "buildGlobalIdentifier": "56",
                     "buildNumber": "22",
-                    "buildUrl": "http://myconcourse-on-T4us.com/builds/56",
+                    "buildUrl": "http://myconcourse-on-us-prod.com/builds/56",
                     "failedJobName": "configure-ert",
                     "pipelineName": "upgrade-tile-ert",
                   },
@@ -83,7 +83,7 @@ exports[`Environments test to see if the environments renders correctly 1`] = `
                 "region": "US",
               }
             }
-            key="us-t5"
+            key="us-prod"
           />
         </Row>
       </CardBlock>

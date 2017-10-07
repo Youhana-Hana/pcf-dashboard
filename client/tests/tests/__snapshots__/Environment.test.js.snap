@@ -12,13 +12,13 @@ exports[`test to see if the environment renders correctly 1`] = `
     >
       US
        
-      T4
+      T3
       <span
         className="float-right badge badge-danger badge-pill"
       >
         <a
           className="text-white"
-          href="http://myconcourse-on-T4us.com/builds/55"
+          href="http://myconcourse-on-us-t3.com/builds/55"
           target="_blank"
         >
            
@@ -121,7 +121,7 @@ exports[`test to see if the environment renders correctly 1`] = `
           <h3>
             <a
               className="text-white nav-link float-right"
-              href="http://myconcourse-on-T4us.com/builds/55"
+              href="http://myconcourse-on-us-t3.com/builds/55"
               target="_blank"
             >
               configure-ert

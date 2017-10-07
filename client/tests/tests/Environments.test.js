@@ -9,8 +9,8 @@ jest.mock('../../src/stores/Environments.js');
 
 describe('Environments', () => {
   const environments = [{
-    "id": "us-t4",
-    "foundation": "T4",
+    "id": "us-t3",
+    "foundation": "T3",
     "region": "US",
     "products": {
       "name": "elastic-runtime",
@@ -23,13 +23,13 @@ describe('Environments', () => {
         "pipelineName": "upgrade-tile-ert",
         "buildNumber": "22",
         "buildGlobalIdentifier": "56",
-        "buildUrl": "http://myconcourse-on-T4us.com/builds/56",
+        "buildUrl": "http://myconcourse-on-us-t3.com/builds/56",
         "failedJobName": "configure-ert"
       }
     }
   }, {
-      "id": "us-t5",
-      "foundation": "T5",
+      "id": "us-prod",
+      "foundation": "prod",
       "region": "US",
       "products": {
         "name": "elastic-runtime",
@@ -42,7 +42,7 @@ describe('Environments', () => {
           "pipelineName": "upgrade-tile-ert",
           "buildNumber": "22",
           "buildGlobalIdentifier": "56",
-          "buildUrl": "http://myconcourse-on-T4us.com/builds/56",
+          "buildUrl": "http://myconcourse-on-us-prod.com/builds/56",
           "failedJobName": "configure-ert"
         }
       }

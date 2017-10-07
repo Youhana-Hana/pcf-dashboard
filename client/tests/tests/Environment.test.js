@@ -4,8 +4,8 @@ import Environment  from '../../src/components/Environment/';
 
 
 const environment = {
-  "id": "us-t4",
-  "foundation": "T4",
+  "id": "us-t3",
+  "foundation": "T3",
   "region": "US",
   "products": {
     "name": "elastic-runtime",
@@ -18,7 +18,7 @@ const environment = {
       "pipelineName": "upgrade-tile-ert",
       "buildNumber": "22",
       "buildGlobalIdentifier": "56",
-      "buildUrl": "http://myconcourse-on-T4us.com/builds/55",
+      "buildUrl": "http://myconcourse-on-us-t3.com/builds/55",
       "failedJobName": "configure-ert"
     }
   }
