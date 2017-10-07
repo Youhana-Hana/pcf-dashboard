@@ -1,5 +1,5 @@
 import AppDispatcher from '../dispatcher/AppDispatcher';
-import Constants from '../constants/PcfPipelinesStatus.js';
+import Constants from '../constants/PcfAutomationStatus.js';
 import { EventEmitter } from 'events';
 
 const CHANGE_EVENT  = 'change';
