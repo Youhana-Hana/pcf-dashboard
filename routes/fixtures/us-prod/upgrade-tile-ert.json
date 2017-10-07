@@ -1,0 +1,10 @@
+{
+  "pipelineStatus": "passed",
+  "buildInfo": {
+    "pipelineName": "upgrade-tile-ert",
+    "buildNumber": "12",
+    "buildGlobalIdentifier": "52",
+    "buildUrl": "http://myconcourse-on-us-prod.com/builds/52",
+    "jobName": "apply-changes"
+  }
+}

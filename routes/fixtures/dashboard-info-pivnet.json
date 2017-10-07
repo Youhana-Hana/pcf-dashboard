@@ -1,0 +1,57 @@
+{
+  "pivnet": {
+    "ertVersions": [
+      {
+        "id": "ert-1.11.*",
+        "latest": "1.11.10",
+        "releaseDate": "2017-08-18",
+        "supportEndDate": "2018-03-31",
+        "releaseNotesUrl": "https://docs.pivotal.io/pivotalcf/1-11/pcf-releaseNotes/runtime-rn.html#1.11.10"
+      },
+      {
+        "id": "ert-1.10.*",
+        "latest": "1.10.24",
+        "releaseDate": "2017-08-18",
+        "supportEndDate": "2017-12-31",
+        "releaseNotesUrl": "https://docs.pivotal.io/pivotalcf/1-10/pcf-releaseNotes/runtime-rn.html#1.10.24"
+      },
+      {
+        "id": "ert-1.9.*",
+        "latest": "1.9.37",
+        "releaseDate": "2017-08-18",
+        "supportEndDate": "2017-09-30",
+        "releaseNotesUrl": "https://docs.pivotal.io/pivotalcf/1-9/pcf-releaseNotes/runtime-rn.html#1.9.37"
+      }
+    ],
+    "opsManagerVersions": [
+      {
+        "id": "opsman-1.11.*",
+        "latest": "1.11.10",
+        "releaseDate": "2017-08-25",
+        "supportEndDate": "2018-09-30",
+        "releaseNotesUrl": "https://docs.pivotal.io/pivotalcf/1-11/pcf-release-notes/opsmanager-rn.html#1.11.10"
+      },
+      {
+        "id": "opsman-1.10.*",
+        "latest": "1.10.15",
+        "releaseDate": "2017-08-29",
+        "supportEndDate": "2017-12-31",
+        "releaseNotesUrl": "https://docs.pivotal.io/pivotalcf/1-10/pcf-release-notes/opsmanager-rn.html#1.10.15"
+      },
+      {
+        "id": "opsman-1.9.*",
+        "latest": "1.9.20",
+        "releaseDate": "2017-08-28",
+        "supportEndDate": "2017-09-30",
+        "releaseNotesUrl": "https://docs.pivotal.io/pivotalcf/1-9/pcf-release-notes/opsmanager-rn.html#1.9.20"
+      }
+    ]
+  },
+  "buildInfo": {
+    "pipelineName": "dashboard-info-pivnet",
+    "buildNumber": "12",
+    "buildGlobalIdentifier": "52",
+    "buildUrl": "http://myconcourse-on-us-qa.com/builds/52",
+    "jobName": "pivnet-api-get"
+  }
+}

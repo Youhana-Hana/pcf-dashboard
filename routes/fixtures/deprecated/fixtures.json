@@ -76,8 +76,8 @@
           }
         }
     }, {
-        "id": "us-t4",
-        "foundation": "T4",
+        "id": "us-t3",
+        "foundation": "T3",
         "region": "US",
         "products": {
           "name": "elastic-runtime",
@@ -90,7 +90,7 @@
               "pipelineName": "upgrade-tile-ert",
               "buildNumber": "22",
               "buildGlobalIdentifier": "56",
-              "buildUrl": "http://myconcourse-on-T4us.com/builds/56",
+              "buildUrl": "http://myconcourse-on-qaus.com/builds/56",
               "failedJobName": "configure-ert"
           }
         }

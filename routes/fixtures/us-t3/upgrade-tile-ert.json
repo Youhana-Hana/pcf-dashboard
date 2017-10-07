@@ -1,0 +1,10 @@
+{
+  "pipelineStatus": "failed",
+  "buildInfo": {
+    "pipelineName": "upgrade-tile-ert",
+    "buildNumber": "12",
+    "buildGlobalIdentifier": "52",
+    "buildUrl": "http://myconcourse-on-us-qa.com/builds/52",
+    "jobName": "configure-ert"
+  }
+}

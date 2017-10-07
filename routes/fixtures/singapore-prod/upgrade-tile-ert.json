@@ -1,0 +1,10 @@
+{
+  "pipelineStatus": "awaiting-apply-changes",
+  "buildInfo": {
+    "pipelineName": "upgrade-tile-ert",
+    "buildNumber": "11",
+    "buildGlobalIdentifier": "51",
+    "buildUrl": "http://myconcourse-on-singapore-prod.com/builds/51",
+    "jobName": "upload-and-stage-tile"
+  }
+}
