@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import PivnetVersions from '../Pivnet/PivnetVersions';
 import Environments from '../Environments/Environments';
-import PivnetActions from '../../actions/PcfPipelines.js';
+import PivnetActions from '../../actions/PcfPipelinesStatus.js';
 
 const API_URL = '/metrics';
 
 class Dashboard extends Component {
   tick() {
-    PivnetActions.loadPcfPipelines(API_URL);
+    PivnetActions.loadPcfPipelinesStatus(API_URL);
   }
 
   componentDidMount() {
-    PivnetActions.loadPcfPipelines(API_URL);
+    PivnetActions.loadPcfPipelinesStatus(API_URL);
   }
 
   componentWillMount() {

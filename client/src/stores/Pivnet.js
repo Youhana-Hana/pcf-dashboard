@@ -1,5 +1,5 @@
 import AppDispatcher from '../dispatcher/AppDispatcher';
-import Constants from '../constants/PcfPipelines.js';
+import Constants from '../constants/PcfPipelinesStatus.js';
 import { EventEmitter } from 'events';
 
 const CHANGE_EVENT  = 'change';
@@ -32,7 +32,7 @@ class PivnetStoreClass extends EventEmitter {
   getErtVersions() {
     return _ertVersions;
   }
-  
+
   getOpsManagerVersions() {
     return _opsManagerVersions;
   }
@@ -42,7 +42,7 @@ const PivnetStore = new PivnetStoreClass();
 
 PivnetStore.dispatchToken = AppDispatcher.register(action => {
   switch(action.actionType) {
-  case Constants.RECIEVE_PAYLOAD:
+  case Constants.RECEIVE_PAYLOAD:
     setErtVersions(action.data.pivnet.ertVersions);
     setOpsManagerVersions(action.data.pivnet.opsManagerVersions);
     PivnetStore.emitChange();

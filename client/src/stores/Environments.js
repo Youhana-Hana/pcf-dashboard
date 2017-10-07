@@ -1,5 +1,5 @@
 import AppDispatcher from '../dispatcher/AppDispatcher';
-import Constants from '../constants/PcfPipelines.js';
+import Constants from '../constants/PcfPipelinesStatus.js';
 import { EventEmitter } from 'events';
 
 const CHANGE_EVENT  = 'change';
@@ -33,7 +33,7 @@ const EnvStore = new EnvStoreClass();
 
 EnvStore.dispatchToken = AppDispatcher.register(action => {
   switch(action.actionType) {
-  case Constants.RECIEVE_PAYLOAD:
+  case Constants.RECEIVE_PAYLOAD:
     setEnvironments(action.data.environments);
     EnvStore.emitChange();
   }
