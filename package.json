@@ -14,6 +14,7 @@
     "url": "git@gitlab.com:emc-awg-emea/pcf-automation-status-dashboard.git"
   },
   "scripts": {
+    "test": "./node_modules/.bin/mocha ./tests/",
     "start": "node ./bin/www",
     "server": "npm start",
     "client": "node start-client.js",
@@ -36,6 +37,7 @@
     "mocha": "4.0.1",
     "chai": "4.1.2",
     "sinon": "4.0.1",
+    "supertest": "3.0.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "14.1.0",
     "eslint-plugin-import": "2.2.0",
