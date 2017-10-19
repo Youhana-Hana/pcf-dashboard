@@ -42,7 +42,7 @@ const PivnetStore = new PivnetStoreClass();
 
 PivnetStore.dispatchToken = AppDispatcher.register(action => {
   switch(action.actionType) {
-  case Constants.RECEIVE_PAYLOAD:
+  case Constants.RECEIVE_PAYLOAD_PIVNET:
     setErtVersions(action.data.pivnet.ertVersions);
     setOpsManagerVersions(action.data.pivnet.opsManagerVersions);
     PivnetStore.emitChange();

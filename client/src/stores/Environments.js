@@ -33,7 +33,7 @@ const EnvStore = new EnvStoreClass();
 
 EnvStore.dispatchToken = AppDispatcher.register(action => {
   switch(action.actionType) {
-  case Constants.RECEIVE_PAYLOAD:
+  case Constants.RECEIVE_PAYLOAD_ENVIRONMENTS:
     setEnvironments(action.data.environments);
     EnvStore.emitChange();
   }

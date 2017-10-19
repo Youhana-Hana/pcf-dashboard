@@ -9,8 +9,13 @@ import {
 
 import Pivnet from '../../components/Pivnet/';
 import PivnetStore from '../../stores/Pivnet';
+import PcfAutomationStatusActions from '../../actions/PcfAutomationStatus.js';
+import PcfAutomationStatusConstants from '../../constants/PcfAutomationStatus.js';
+
+const API_URL = '/metrics/pivnet';
 
 class PivnetVersions extends Component {
+
   constructor(props) {
     super(props);
     this.state =  {
@@ -21,12 +26,22 @@ class PivnetVersions extends Component {
     this.onChange = this.onChange.bind(this);
   }
 
+  tick() {
+    PcfAutomationStatusActions.loadPcfAutomationStatus(API_URL, PcfAutomationStatusConstants.RECEIVE_PAYLOAD_PIVNET);
+  }
+
+  componentDidMount() {
+    PcfAutomationStatusActions.loadPcfAutomationStatus(API_URL, PcfAutomationStatusConstants.RECEIVE_PAYLOAD_PIVNET);
+  }
+
   componentWillMount() {
     PivnetStore.addChangeListener(this.onChange);
+    this.interval = setInterval(this.tick, 10000);
   }
 
   componentWillUnmount() {
     PivnetStore.removeChangeListener(this.onChange);
+    clearInterval(this.interval);
   }
 
 
