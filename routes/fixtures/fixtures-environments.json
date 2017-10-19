@@ -1,0 +1,58 @@
+{
+    "environments": [{
+        "id": "us-prod",
+        "foundation": "PROD",
+        "region": "US",
+        "products": {
+          "name": "elastic-runtime",
+          "currentVersion": "1.10.13",
+          "stagedVersion": "",
+          "currentVersionInS3": "1.10.17",
+          "pcfPipelineVersion": "1.15.1",
+          "pipelineStatus": "passed",
+          "buildInfo": {
+              "pipelineName": "upgrade-tile-ert",
+              "buildNumber": "12",
+              "buildGlobalIdentifier": "52",
+              "buildUrl": "http://myconcourse-on-produs.com/builds/52"
+          }
+        }
+    }, {
+        "id": "singapore-prod",
+        "foundation": "PROD",
+        "region": "Singapore",
+        "products": {
+          "name": "elastic-runtime",
+          "currentVersion": "1.10.12",
+          "stagedVersion": "1.10.13",
+          "currentVersionInS3": "1.10.17",
+          "pcfPipelineVersion": "1.15.1",
+          "pipelineStatus": "awaiting-apply-changes",
+          "buildInfo": {
+              "pipelineName": "upgrade-tile-ert",
+              "buildNumber": "6",
+              "buildGlobalIdentifier": "41",
+              "buildUrl": "http://myconcourse-on-prodsingapore.com/builds/41"
+          }
+        }
+    }, {
+        "id": "us-t3",
+        "foundation": "T3",
+        "region": "US",
+        "products": {
+          "name": "elastic-runtime",
+          "currentVersion": "1.10.13",
+          "stagedVersion": "",
+          "currentVersionInS3": "1.10.18",
+          "pcfPipelineVersion": "1.15.1",
+          "pipelineStatus": "failed",
+          "buildInfo": {
+              "pipelineName": "upgrade-tile-ert",
+              "buildNumber": "22",
+              "buildGlobalIdentifier": "56",
+              "buildUrl": "http://myconcourse-on-qaus.com/builds/56",
+              "failedJobName": "configure-ert"
+          }
+        }
+    }]
+}
