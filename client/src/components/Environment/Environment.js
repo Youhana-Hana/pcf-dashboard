@@ -15,29 +15,6 @@ import CardRow from '../CardRow/';
 
 class Environment extends Component {
 
-  getStatusLabel(status) {
-    switch(status.toLowerCase()) {
-      case "passed":
-        return "S";
-      case "failed":
-        return "F";
-      default:
-        return "R";
-    }
-  }
-
-  getStatusColor(status) {
-    switch(status.toLowerCase()) {
-      case "passed":
-        return "success";
-      case "failed":
-        return "danger";
-      default:
-        return "warning";
-    }
-  }
-
-
   render() {
     let url = this.props.env.products.buildInfo.buildUrl;
     let buildNumber = this.props.env.products.buildInfo.buildGlobalIdentifier;
@@ -49,7 +26,6 @@ class Environment extends Component {
         <CardHeader>
           <h2 className="mb-0">
             {this.props.env.region} {this.props.env.foundation}
-            <Badge pill color={this.getStatusColor(this.props.env.products.pipelineStatus)} className="float-right"><a href={url} className="text-white" target="_blank"> {buildNumber}</a></Badge>
           </h2>
         </CardHeader>
 
@@ -62,10 +38,6 @@ class Environment extends Component {
 
             <CardRow row= {{label:"Forthcoming ERT Version(S3)", value: this.props.env.products.currentVersionInS3}} key={this.props.env.products.currentVersionInS3}></CardRow>
 
-            <CardRow row= {{label:"PCF Pipeline Version", value: this.props.env.products.pcfPipelineVersion}} key={this.props.env.products.pcfPipelineVersion}></CardRow>
-
-            {failedJobName ?
-             <CardRow row= {{label:"Failed Job", value: failedJobName, url: url }} key={failedJobName}></CardRow> : ""}
           </CardBlock>
         </Card>
       </Col>
