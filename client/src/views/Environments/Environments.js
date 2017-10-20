@@ -30,6 +30,7 @@ class Environments extends Component {
 
   componentDidMount() {
     PcfAutomationStatusActions.loadPcfAutomationStatus(API_URL, PcfAutomationStatusConstants.RECEIVE_PAYLOAD_ENVIRONMENTS);
+
   }
 
   componentWillMount() {
@@ -61,7 +62,7 @@ class Environments extends Component {
 
                 {
                   this.state.environments.map((env) => {
-                    return <Environment env={env} key={env.id}></Environment>;
+                    return <Environment env={env} key={env.region+"-"+env.foundation}></Environment>;
                   })
                 }
               </Row>
