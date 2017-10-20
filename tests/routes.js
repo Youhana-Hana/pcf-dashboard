@@ -8,7 +8,7 @@ const environments = require('../lib/environments.js');
 
 describe('routes', function() {
   beforeEach(function(){
-    sinon.stub(environments, 'get').returns('ENVIRONMENTS');
+    sinon.stub(environments, 'get').yields(null, 'ENVIRONMENTS');
   })
 
   afterEach(function(){

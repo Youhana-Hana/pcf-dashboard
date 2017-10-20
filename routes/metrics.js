@@ -14,7 +14,9 @@ router.get('/metrics/pivnet', (req, res) => {
   res.json(pivnetPayload).status(200);
 });
 router.get('/metrics/environments', (req, res) => {
-  res.json(environments.get()).status(200);
+  environments.get(function(err, data) {
+    res.json(data).status(200);
+  });
 });
 router.get('/metrics/pipeline/:pipelineName/region/:region/foundation/:foundation', (req, res) => {
   let payload = "";
