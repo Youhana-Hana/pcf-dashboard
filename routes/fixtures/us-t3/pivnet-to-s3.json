@@ -1,5 +1,5 @@
 {
-  "currentVersionInS3": "1.10.18",
+  "currentVersionERTInS3": "1.10.18",
   "buildInfo": {
     "pipelineName": "pivnet-to-s3",
     "buildNumber": "12",

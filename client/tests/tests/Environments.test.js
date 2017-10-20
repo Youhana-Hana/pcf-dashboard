@@ -14,9 +14,9 @@ describe('Environments', () => {
     "region": "US",
     "products": {
       "name": "elastic-runtime",
-      "currentVersion": "1.10.13",
-      "stagedVersion": "",
-      "currentVersionInS3": "1.10.18",
+      "currentVersionERT": "1.10.13",
+      "stagedVersionERT": "",
+      "currentVersionERTInS3": "1.10.18",
       "pcfPipelineVersion": "1.15.1",
       "pipelineStatus": "failed",
       "buildInfo": {
@@ -33,9 +33,9 @@ describe('Environments', () => {
       "region": "US",
       "products": {
         "name": "elastic-runtime",
-        "currentVersion": "1.10.13",
-        "stagedVersion": "",
-        "currentVersionInS3": "1.10.18",
+        "currentVersionERT": "1.10.13",
+        "stagedVersionERT": "",
+        "currentVersionERTInS3": "1.10.18",
         "pcfPipelineVersion": "1.15.1",
         "pipelineStatus": "failed",
         "buildInfo": {

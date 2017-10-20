@@ -1,6 +1,6 @@
 {
-  "currentVersion": "1.10.12",
-  "stagedVersion": "1.10.13",
+  "currentVersionERT": "1.10.12",
+  "stagedVersionERT": "1.10.13",
   "buildInfo": {
     "pipelineName": "dashboard-info-opsman",
     "buildNumber": "12",
