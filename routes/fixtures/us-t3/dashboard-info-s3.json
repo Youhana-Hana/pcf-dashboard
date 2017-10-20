@@ -1,10 +1,10 @@
 {
   "currentVersionERTInS3": "1.10.18",
   "buildInfo": {
-    "pipelineName": "pivnet-to-s3",
+    "pipelineName": "dashboard-info-s3",
     "buildNumber": "12",
     "buildGlobalIdentifier": "52",
     "buildUrl": "http://myconcourse-on-us-qa.com/builds/52",
-    "jobName": "upload-elastic-runtime-to-s3"
+    "jobName": "s3-api-get"
   }
 }
