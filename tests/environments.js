@@ -23,13 +23,13 @@ describe('environments', function() {
 
     environments.get(function() {
       expect(cisync.get.callCount).to.equal(3);
+      expect(cisync.get.args[0][0]).to.deep.equal({region:"US", foundation:"PROD", url:""});
       done();
     })
 
   })
 
   it('aggregate all environments', function(done) {
-
     environments.get(function(err, data) {
       expect(data.environments.length).to.equal(3);
       expect(data).to.deep.equal(expectedAggregate);
