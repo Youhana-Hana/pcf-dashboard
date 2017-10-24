@@ -1,58 +1,42 @@
-const environments = require('../lib/environments.js');
+const pivnet = require('../lib/pivnet.js');
+const mocha =  require("mocha");
+const expect =  require("chai").expect;
+const sinon = require('sinon');
+const api = require('../lib/api');
+
 const usProdOpsMan = require('../routes/fixtures/us-prod/dashboard-info-opsman.json');
 const usT3OpsMan = require('../routes/fixtures/us-t3/dashboard-info-opsman.json');
 const singaporeProdOpsMan = require('../routes/fixtures/singapore-prod/dashboard-info-opsman.json');
 const usProdS3 = require('../routes/fixtures/us-prod/dashboard-info-s3.json');
 const usT3S3 = require('../routes/fixtures/us-t3/dashboard-info-s3.json');
 const singaporeProdS3 = require('../routes/fixtures/singapore-prod/dashboard-info-s3.json');
-const mocha =  require("mocha");
-const expect =  require("chai").expect;
-const sinon = require('sinon');
-const cisync = require('../lib/cisync');
 
-describe('environments', function() {
+describe('pivnet', function() {
 
   beforeEach(function() {
-    sinon.stub(cisync, 'get').yields(null, usProdOpsMan);
-    cisync.get.onCall(0).yields(null, usProdOpsMan);
-    cisync.get.onCall(1).yields(null, usProdS3);
-    cisync.get.onCall(2).yields(null, usT3OpsMan);
-    cisync.get.onCall(3).yields(null, usT3S3);
-    cisync.get.onCall(4).yields(null, singaporeProdOpsMan);
-    cisync.get.onCall(5).yields(null, singaporeProdS3);
+    sinon.stub(api, 'get').resolves(usProdOpsMan);
   });
 
   afterEach(function() {
-    cisync.get.restore();
-  })
+    api.get.restore();
+  });
 
-  it('should call cisync', function(done) {
-
-    environments.get(function() {
-      expect(cisync.get.callCount).to.equal(6);
-      expect(cisync.get.args[0][0]).to.deep.equal({url:"https://cisynctester.apps.int.us1.bosch-iot-cloud.com/erts/dashboard-info-opsman", pipelineName: "dashboard-info-opsman"});
+  it('should call api', function(done) {
+    pivnet.get(function(err, data) {
+      expect(err).to.not.exist;
+      expect(api.get.callCount).to.equal(1);
       done();
-    })
-
-  })
-
-  it('aggregate all environments', function(done) {
-    environments.get(function(err, data) {
-      expect(data.environments.length).to.equal(3);
-      expect(data).to.deep.equal(expectedAggregate);
+    });
+  });
+  
+  it('should call pivent ert reuntime endpoint', function(done) {
+    pivnet.get(function(err, data) {
+      expect(err).to.not.exist;
+      expect(api.get.args[0][0]).to.equal('https://network.pivotal.io/api/v2/products/elastic-runtime/releases');
       done();
-    })
-  })
-
-  it('decorates the json with region and foundation', function(done) {
-    const expected = usProdOpsMan;
-    environments.get(function(err, data) {
-
-      expect(data.environments[0]).to.deep.equal(expectedDecoratedUsProd);
-      done();
-    })
-  })
-})
+    });
+  });
+});
 
 const expectedDecoratedUsProd = {
     "foundation": "PROD",
