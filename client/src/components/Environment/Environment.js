@@ -16,9 +16,6 @@ import CardRow from '../CardRow/';
 class Environment extends Component {
 
   render() {
-    let url = this.props.env.buildInfo.buildUrl;
-    let buildNumber = this.props.env.buildInfo.buildGlobalIdentifier;
-    let failedJobName = this.props.env.buildInfo.failedJobName;
     let stagedVersionERT = this.props.env.stagedVersionERT;
 
     return (

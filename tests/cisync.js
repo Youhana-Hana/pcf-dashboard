@@ -12,11 +12,14 @@ describe('cisync', function() {
 
   it('retrieves different results based on item', function(done) {
 
-    const list = [{url: "", foundation: "PROD", region: "US"}, {url: "", foundation: "T3", region: "US"}, {url: "", foundation: "PROD", region: "SINGAPORE"}];
+    const pipelines = [{url:"https://cisynctester.apps.int.us1.bosch-iot-cloud.com/erts/dashboard-info-opsman", pipelineName: "dashboard-info-opsman"},{url:"https://cisynctester.apps.int.us1.bosch-iot-cloud.com/erts/dashboard-info-s3", pipelineName: "dashboard-info-s3"}]
+    const list = [{foundation: "PROD", region: "US", pipelines:pipelines},
+    {foundation: "T3", region: "US", pipelines:pipelines},
+    {foundation: "PROD", region: "SINGAPORE", pipelines:pipelines}];
 
-    cisync.get(list[0], function(err, data){
+    cisync.get(list[0].pipelines[0], list[0], function(err, data){
       expect(data).to.deep.equal(expectedCisyncPayloadUsProd)
-      cisync.get(list[1], function(err, data) {
+      cisync.get(list[1].pipelines[0], list[1], function(err, data) {
         expect(data).to.deep.equal(expectedCisyncPayloadUsT3)
         done();
       })
