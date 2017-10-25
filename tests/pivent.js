@@ -82,17 +82,17 @@ const expectedOpsManagerVersions = [{
       "latest": "1.12.2",
       "releaseDate": "2017-10-05",
       "supportEndDate": "2018-06-15",
-    "releaseNotesUrl": "https://docs.pivotal.io/pivotalcf/pcf-release-notes/#1.12.2"
+    "releaseNotesUrl": "https://docs.pivotal.io/pivotalcf/1-12/pcf-release-notes/"
     }, {
       "id": "opsman-1.11.*",
       "latest": "1.11.12",
       "releaseDate": "2017-09-25",
       "supportEndDate": "2018-03-31",
-      "releaseNotesUrl": "https://docs.pivotal.io/pivotalcf/pcf-release-notes/#1.11.12"
+      "releaseNotesUrl": "https://docs.pivotal.io/pivotalcf/1-11/pcf-release-notes/"
     }, {
       "id": "opsman-1.10.*",
       "latest": "1.10.17",
       "releaseDate": "2017-09-25",
       "supportEndDate": "2017-12-31",
-      "releaseNotesUrl": "https://docs.pivotal.io/pivotalcf/pcf-release-notes/#1.10.17"
+      "releaseNotesUrl": "https://docs.pivotal.io/pivotalcf/1-10/pcf-release-notes/"
     }];
