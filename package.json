@@ -47,8 +47,4 @@
     "eslint-plugin-jsx-a11y": "4.0.0",
     "eslint-plugin-react": "6.9.0"
   },
-  "engines": {
-    "node": ">= 6.0.0",
-    "npm": ">= 5.0.0"
-  }
 }

@@ -1,5 +1,4 @@
 client/
 build/
-node_modules/
 .eslintignore
 .eslintrc.json
