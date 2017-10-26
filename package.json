@@ -38,6 +38,6 @@
     "supertest": "3.0.0"
   },
   "engines": {
-    "node": ">= 4.5.x"
+    "node": ">= 6.0.0"
   }
 }
