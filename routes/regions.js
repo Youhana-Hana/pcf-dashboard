@@ -1,3 +1,5 @@
+'use strict';
+
 const express = require('express');
 const regionUs = require('./fixtures/regions-us.json');
 const regionSingapore = require('./fixtures/regions-singapore.json');

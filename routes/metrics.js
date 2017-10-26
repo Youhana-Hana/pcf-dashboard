@@ -1,3 +1,5 @@
+'use strict';
+
 const express = require('express');
 const pivent = require('../lib/pivnet');
 const environments = require('../lib/environments');

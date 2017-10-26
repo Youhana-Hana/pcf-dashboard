@@ -36,5 +36,8 @@
     "mocha": "4.0.1",
     "sinon": "4.0.1",
     "supertest": "3.0.0"
+  },
+  "engines": {
+    "node": ">= 4.5.x"
   }
 }
