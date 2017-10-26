@@ -1,18 +1,12 @@
 {
   "name": "pcf-automation-status-dashboard",
   "version": "0.0.1",
-  "private": true,
-  "contributors": [
-    {
-      "name": "Youhaha Hana",
-      "email": "youhana.hana@emc.com"
-    }
-  ],
+  "description": "PCF Pipelines dashboard",
+  "main": "index.js",
+  "repository": "git@gitlab.com:emc-awg-emea/pcf-automation-status-dashboard.git",
+  "author": "Youhana Hana <Youhana.Hana@emc.com>",
   "license": "UNLICENSED",
-  "repository": {
-    "type": "git",
-    "url": "git@gitlab.com:emc-awg-emea/pcf-automation-status-dashboard.git"
-  },
+  "private": true,
   "scripts": {
     "test": "./node_modules/.bin/mocha ./tests/",
     "start": "node ./bin/www",
@@ -22,32 +16,25 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "babel-eslint": "^8.0.0",
-    "body-parser": "~1.17.1",
-    "cookie-parser": "~1.4.3",
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
     "cors": "^2.8.4",
-    "debug": "~2.6.3",
-    "express": "~4.15.2",
+    "express": "^4.16.2",
     "lodash": "^4.17.4",
-    "morgan": "~1.8.1",
-    "pug": "~2.0.0-rc.4",
+    "morgan": "^1.9.0",
     "semver": "^5.4.1",
-    "serve-favicon": "~2.4.2",
-    "superagent": "^3.7.0"
+    "superagent": "^3.8.0"
   },
   "devDependencies": {
-    "concurrently": "3.1.0",
-    "mocha": "4.0.1",
     "chai": "4.1.2",
-    "sinon": "4.0.1",
-    "supertest": "3.0.0",
+    "concurrently": "3.1.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "14.1.0",
     "eslint-plugin-import": "2.2.0",
     "eslint-plugin-jsx-a11y": "4.0.0",
-    "eslint-plugin-react": "6.9.0"
-  },
-  "engines": {
-    "node": ">= 6.0.0"
+    "eslint-plugin-react": "6.9.0",
+    "mocha": "4.0.1",
+    "sinon": "4.0.1",
+    "supertest": "3.0.0"
   }
 }
