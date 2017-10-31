@@ -39,5 +39,16 @@
   },
   "engines": {
     "node": ">= 6.0.0"
-  }
+  },
+  "bundledDependencies": [
+    "body-parser",
+    "debug",
+    "cookie-parser",
+    "cors",
+    "express",
+    "lodash",
+    "morgan",
+    "semver",
+    "superagent"
+  ]
 }
