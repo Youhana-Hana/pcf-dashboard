@@ -84,6 +84,7 @@ jobs:
           set -e
           cd pcf-automation-status-dashboard
   - put: pcf
+    tags: [internal-proxy]
     params:
       manifest: pcf-automation-status-dashboard/manifest.yml
       path: pcf-automation-status-dashboard
@@ -100,6 +101,7 @@ resources:
     password: ((dashboard_git_password))
 - name: pcf
   type: cf
+  tags: [internal-proxy]
   source:
     api: ((pcf-api))
     organization: ((pcf-organization))
