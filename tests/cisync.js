@@ -20,7 +20,7 @@ describe('cisync', function() {
     cisync.get(list[0].pipelines[0], list[0], function(err, data){
       expect(data).to.deep.equal(expectedCisyncPayloadUsProd)
       cisync.get(list[1].pipelines[0], list[1], function(err, data) {
-        expect(data).to.not.deep.equal(expectedCisyncPayloadUsT3)
+        expect(data).to.deep.equal(expectedCisyncPayloadUsT3)
         done();
       })
     })
