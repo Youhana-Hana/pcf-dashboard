@@ -27,7 +27,30 @@ jobs:
         - |
           set -e
           cd pcf-automation-status-dashboard
-          npm run client test
+          npm test
+          echo $?
+  - task: run-client-tests
+    config:
+      platform: linux
+      image_resource:
+        type: docker-image
+        source:
+          repository: ((docker-private-registry-url))/osc2/node
+          tag: "latest"
+          insecure_registries:
+            - ((docker-private-registry-url))
+          username: ((docker-private-registry-username))
+          password: ((docker-private-registry-password))
+      inputs:
+        - name: pcf-automation-status-dashboard
+      run:
+        path: sh
+        args:
+        - -exc
+        - |
+          set -e
+          cd pcf-automation-status-dashboard/client
+          npm test
           echo $?
 
 - name: build-client-and-deploy-app
