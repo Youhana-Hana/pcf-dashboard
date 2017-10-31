@@ -1,5 +1,5 @@
 applications:
-- name: pcf-automation-status-dashboard-v3
+- name: pcf-automation-status-dashboard
   instances: 1
   memory: 1G
   disk_quota: 1024M
