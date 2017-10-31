@@ -9,7 +9,7 @@ jest.mock('../../src/stores/Environments.js');
 
 describe('Environments', () => {
   const environments = [{
-    "id": "us-t3",
+    "id": "US-T3",
     "foundation": "T3",
     "region": "US",
     "products": {
@@ -28,7 +28,7 @@ describe('Environments', () => {
       }
     }
   }, {
-      "id": "us-prod",
+      "id": "US-prod",
       "foundation": "prod",
       "region": "US",
       "products": {

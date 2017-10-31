@@ -39,7 +39,7 @@ exports[`Environments test to see if the environments renders correctly 1`] = `
             env={
               Object {
                 "foundation": "T3",
-                "id": "us-t3",
+                "id": "US-T3",
                 "products": Object {
                   "buildInfo": Object {
                     "buildGlobalIdentifier": "56",
@@ -58,13 +58,13 @@ exports[`Environments test to see if the environments renders correctly 1`] = `
                 "region": "US",
               }
             }
-            key="us-t3"
+            key="US-T3"
           />
           <Environment
             env={
               Object {
                 "foundation": "prod",
-                "id": "us-prod",
+                "id": "US-prod",
                 "products": Object {
                   "buildInfo": Object {
                     "buildGlobalIdentifier": "56",
@@ -83,7 +83,7 @@ exports[`Environments test to see if the environments renders correctly 1`] = `
                 "region": "US",
               }
             }
-            key="us-prod"
+            key="US-prod"
           />
         </Row>
       </CardBlock>

@@ -34,9 +34,7 @@ exports[`test to see if the environment renders correctly 1`] = `
         <div
           className="col-12 col-sm-6 col-lg-5"
         >
-          <h3>
-            1.10.13
-          </h3>
+          <h3 />
         </div>
       </div>
       <div
@@ -70,9 +68,7 @@ exports[`test to see if the environment renders correctly 1`] = `
         <div
           className="col-12 col-sm-6 col-lg-5"
         >
-          <h3>
-            1.10.17
-          </h3>
+          <h3 />
         </div>
       </div>
     </div>
