@@ -41,9 +41,26 @@ develop & update client src
 $ npm run dev
 ```
 
+run server tests
+```sh
+$ npm test
+```
+
 run client tests
 ```sh
 $ npm run client test
+```
+
+generate pack or artifact
+```sh
+$ npm pack
+```
+
+unpack
+```sh
+$ tar -xf <PACK PATH>
+cd package
+npm start
 ```
 
 For production environments PCF ...
