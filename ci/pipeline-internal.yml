@@ -4,6 +4,7 @@ jobs:
   public: true
   plan:
   - get: pcf-automation-status-dashboard
+    tags: [internal-proxy]
     trigger: true
   - task: run-unit-tests
     config:
@@ -11,7 +12,12 @@ jobs:
       image_resource:
         type: docker-image
         source:
-          repository: node
+          repository: ((docker-private-registry-url))/osc2/node
+          tag: "latest"
+          insecure_registries:
+            - ((docker-private-registry-url))
+          username: ((docker-private-registry-username))
+          password: ((docker-private-registry-password))
       inputs:
         - name: pcf-automation-status-dashboard
       run:
@@ -19,15 +25,17 @@ jobs:
         args:
         - -exc
         - |
+          set -e
           cd pcf-automation-status-dashboard
-          npm i && cd client && npm i && cd ..
           npm run client test
+          echo $?
 
 - name: build-client-and-deploy-app
   serial: true
   public: true
   plan:
   - get: pcf-automation-status-dashboard
+    tags: [internal-proxy]
     trigger: true
     passed:
       - unit-tests
@@ -37,7 +45,12 @@ jobs:
       image_resource:
         type: docker-image
         source:
-          repository: node
+          repository: ((docker-private-registry-url))/osc2/node
+          tag: "latest"
+          insecure_registries:
+            - ((docker-private-registry-url))
+          username: ((docker-private-registry-username))
+          password: ((docker-private-registry-password))
       inputs:
         - name: pcf-automation-status-dashboard
       run:
@@ -45,6 +58,7 @@ jobs:
         args:
         - -exc
         - |
+          set -e
           cd pcf-automation-status-dashboard
           npm i && cd client && npm i && cd ..
           npm run client build
@@ -57,6 +71,7 @@ jobs:
 resources:
 - name: pcf-automation-status-dashboard
   type: git
+  tags: [internal-proxy]
   source:
     branch: master
     uri: ((dashboard_git_uri))
