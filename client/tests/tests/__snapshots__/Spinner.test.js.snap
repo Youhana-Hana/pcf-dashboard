@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test to see if the spinner renders correctly 1`] = `
+<div
+  className="sweet-loading"
+>
+  <div
+    className="css-fmrsd2"
+  >
+    <div
+      className="css-1h0xra1"
+    />
+    <div
+      className="css-s5vm1e"
+    />
+  </div>
+</div>
+`;

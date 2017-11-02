@@ -79,7 +79,7 @@ describe('Environments', () => {
   it('should render environemnts header', () => {
     const label= wrapper.find('h1').html();
 
-    expect(label).toEqual('<h1 class="mb-0">Environments</h1>');
+    expect(label).toEqual('<h1 class=\"mb-0\">Environments<div class=\"align-bottom float-right\"><div class=\"sweet-loading\"><div class=\"css-13qlqsl\"><div class=\"css-6ny95\"></div><div class=\"css-12pmby4\"></div></div></div></div></h1>');
   })
 
   it('should render first environment', () => {

@@ -26,6 +26,15 @@ exports[`Environments test to see if the environments renders correctly 1`] = `
           className="mb-0"
         >
           Environments
+          <div
+            className="align-bottom float-right"
+          >
+            <Spinner
+              className="align-middle"
+              loading={false}
+              size="15"
+            />
+          </div>
         </h1>
       </CardHeader>
       <CardBlock
