@@ -7,7 +7,7 @@ class Spinner extends Component {
   }
   render() {
     return (
-        <div className='sweet-loading'>
+        <div className='sweet-loading col-centered'>
         <HashLoader
       color={'#000000'}
       size= { parseInt(this.props.size)}
