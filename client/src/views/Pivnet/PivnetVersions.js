@@ -30,7 +30,6 @@ class PivnetVersions extends Component {
   }
 
   tick() {
-    console.log('pivnet')
     let state = this.state;
     state.loading = true;
     this.setState(state);
