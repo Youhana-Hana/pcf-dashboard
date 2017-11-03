@@ -2,7 +2,7 @@
 
 exports[`test to see if the spinner renders correctly 1`] = `
 <div
-  className="sweet-loading"
+  className="sweet-loading col-centered"
 >
   <div
     className="css-fmrsd2"
