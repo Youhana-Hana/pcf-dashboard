@@ -1,6 +1,6 @@
 {
   "name": "pcf-automation-status-dashboard",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "PCF Pipelines dashboard",
   "main": "index.js",
   "repository": "git@gitlab.com:emc-awg-emea/pcf-automation-status-dashboard.git",
@@ -50,6 +50,7 @@
     "lodash",
     "morgan",
     "semver",
-    "superagent"
+    "superagent",
+    "node-cache"
   ]
 }
