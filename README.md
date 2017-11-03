@@ -51,18 +51,6 @@ run client tests
 $ npm run client test
 ```
 
-generate pack or artifact
-```sh
-$ npm pack
-```
-
-unpack
-```sh
-$ tar -xf <PACK PATH>
-cd package
-npm start
-```
-
 For production environments PCF ...
 Please login to your pcf account.
 Update manifest.yaml to change production settings (RAM or storage).
@@ -73,6 +61,46 @@ $ npm run client build
 $ cf login
 $ cf push
 ```
+
+### Artifacts
+All artifacts stored under artifacts directory and generated through below command:
+```sh
+$ npm pack
+```
+
+- Artifacts named as `pcf-automation-status-dashboard-0.0.2.tgz`, where `0.0.2` is the version defined in `package.json`
+- Artifact modules defined inside `package.json` under 'bundledDependencies' section. It's the responsability of the developer to manually keep this section up to date.
+
+To use the artifacts, please unpack it, through below command
+
+```sh
+$ tar -xf <PACK PATH>
+cd package
+npm start
+```
+
+### Deployment
+* Manual
+  *  Clone the repo
+  *  Push it to PCF
+
+**Although node_modules is included, it's ignored through `.cfignore` as the staging is taking care of installing all dependencies** 
+
+* CI/CD
+  *  Clone the Repo
+  *  You can make use of node_modules, in case CI cannot connect to the internet
+
+* Offline
+
+Offline is a bit tricky as best practicies is to install node modules through `npm` or `yarn`. there are situation where internet is not available.
+In our case we covered through `artifacts` or using checked-in node_modules.
+**checked-in node_modules works on lunix, there are case where it might not work on Windows or Apple. in this case delete all node_modules and reinstall them sing above command**
+
+#### Alternatives
+* Enable npmjs.org to install dependencies
+* local-npm
+* Mirroring yarn or npm registry locally
+
 
 ### CI/CD
 
