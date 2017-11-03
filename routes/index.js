@@ -6,7 +6,7 @@ const router = express.Router();
 
 /* GET home page. */
 router.get('/', (req, res) => {
-  res.redirect('pcf.html');
+  res.redirect('index.html');
 });
 
 module.exports = router;
