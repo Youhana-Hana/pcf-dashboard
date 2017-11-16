@@ -1,10 +1,3 @@
 {
-  "currentVersionERTInS3": "1.10.17",
-  "buildInfo": {
-    "pipelineName": "dashboard-info-s3",
-    "buildNumber": "12",
-    "buildGlobalIdentifier": "52",
-    "buildUrl": "http://myconcourse-on-singapore-prod.com/builds/52",
-    "jobName": "s3-api-get"
-  }
+  "currentVersionERTInS3": "1.10.17"
 }
