@@ -11,7 +11,7 @@ Project uses a number of open source projects to work properly:
 
 #### UI/client side
 * [react](https://facebook.github.io/react/) - HTML enhanced for web apps!
-* [react flux](https://facebook.github.io/flux/docs/overview.html) - client-side web applications architecture 
+* [react flux](https://facebook.github.io/flux/docs/overview.html) - client-side web applications architecture
 * [Dashboard templates](https://github.com/mrholek/CoreUI-React) - React.js version of our Bootstrap 4 admin template
 
 ### Installation
@@ -92,9 +92,9 @@ npm start
 
 * Offline
 
-Offline is a bit tricky as best practicies is to install node modules through `npm` or `yarn`. there are situation where internet is not available.
+Offline is a bit tricky as best practice is to install node modules through `npm` or `yarn`. there are situation where internet is not available.
 In our case we covered through `artifacts` or using checked-in node_modules.
-**checked-in node_modules works on lunix, there are case where it might not work on Windows or Apple. in this case delete all node_modules and reinstall them sing above command**
+**checked-in node_modules works on linux, there are case where it might not work on Windows or Apple. in this case delete all node_modules and reinstall them using above commands**
 
 #### Alternatives
 * Enable npmjs.org to install dependencies
