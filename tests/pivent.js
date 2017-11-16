@@ -40,10 +40,14 @@ describe('pivnet', function() {
     api.get.resolves(require('./fixtures/ertReleases.json'));
 
     pivnet.get(function(err, data) {
+      try {
       expect(err).to.not.exist;
         expect(data.pivnet.ertVersions.length).to.equal(3);
       expect(data.pivnet.ertVersions).to.deep.equal(expectedErtVersions);
       done(err);
+      } catch(err) {
+        done(err);
+      }
     });
   });
   
@@ -81,8 +85,27 @@ describe('pivnet', function() {
       }
     });
   });
-});
 
+it('ert and opsManager releases out of order', function(done) {
+  api.get.onCall(0).resolves(require('./fixtures/ertReleases_out_of_order.json'));
+  api.get.onCall(1).resolves(require('./fixtures/opsManagerReleases_out_of_order.json'));
+  
+  pivnet.get(function(err, data) {
+    try {
+      const expectedPayload = {
+        pivnet: {
+          ertVersions: expectedErtVersions,
+          opsManagerVersions: expectedOpsManagerVersions
+        }};
+
+      expect(data).to.deep.equal(expectedPayload);
+      return done(err);
+    } catch(err) {
+      return done(err);
+    }
+  });
+});
+});
 const expectedErtVersions = [{
       "id": "ert-1.12.*",
       "latest": "1.12.4",
