@@ -17,6 +17,7 @@ class Environment extends Component {
 
   render() {
     let stagedVersionERT = this.props.env.stagedVersionERT;
+    let currentVersionERT = this.props.env.currentVersionERT;
 
     return (
       <Col xs="12" sm="6" lg="4">
@@ -28,12 +29,11 @@ class Environment extends Component {
 
         <Card className="text-white bg-primary">
           <CardBlock className="card-body pb-0">
-            <CardRow row= {{label:"Current ERT Version", value: this.props.env.currentVersionERT}} key={this.props.env.currentVersionERT}></CardRow>
+            {currentVersionERT ?
+            <CardRow row= {{label:"Current ERT Version", value: this.props.env.currentVersionERT}} key={this.props.env.currentVersionERT}></CardRow> : <CardRow row= {{label:"Current ERT Version", value: "TBC"}}></CardRow>}
 
             {stagedVersionERT ?
             <CardRow row= {{label:"Staged ERT Version", value: this.props.env.stagedVersionERT}} key={this.props.env.stagedVersionERT}></CardRow> : <CardRow row= {{label:"Staged ERT Version", value: "N/A"}}></CardRow>}
-
-            <CardRow row= {{label:"Forthcoming ERT Version(S3)", value: this.props.env.currentVersionERTInS3}} key={this.props.env.currentVersionERTInS3}></CardRow>
 
           </CardBlock>
         </Card>
