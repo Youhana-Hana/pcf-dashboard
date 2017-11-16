@@ -4,12 +4,12 @@ const expect =  require("chai").expect;
 const sinon = require('sinon');
 const api = require('../lib/api');
 
-const usProdOpsMan = require('../routes/fixtures/us-prod/dashboard-info-opsman.json');
-const usT3OpsMan = require('../routes/fixtures/us-t3/dashboard-info-opsman.json');
-const singaporeProdOpsMan = require('../routes/fixtures/singapore-prod/dashboard-info-opsman.json');
-const usProdS3 = require('../routes/fixtures/us-prod/dashboard-info-s3.json');
-const usT3S3 = require('../routes/fixtures/us-t3/dashboard-info-s3.json');
-const singaporeProdS3 = require('../routes/fixtures/singapore-prod/dashboard-info-s3.json');
+const usProdOpsMan = require('../routes/fixtures/DE1-PROD/opsman-api.json');
+const usT3OpsMan = require('../routes/fixtures/US1-QA-T3/opsman-api.json');
+const singaporeProdOpsMan = require('../routes/fixtures/SG1-PROD/opsman-api.json');
+const usProdS3 = require('../routes/fixtures/DE1-PROD/s3-api.json');
+const usT3S3 = require('../routes/fixtures/US1-QA-T3/s3-api.json');
+const singaporeProdS3 = require('../routes/fixtures/SG1-PROD/s3-api.json');
 
 describe('pivnet', function() {
   beforeEach(function() {

@@ -4,7 +4,7 @@ import Environment  from '../../src/components/Environment/';
 
 
 const environment = {
-  "id": "us-t3",
+  "id": "US1-QA-T3",
   "foundation": "T3",
   "region": "US",
   "products": {
@@ -18,7 +18,7 @@ const environment = {
       "pipelineName": "upgrade-tile-ert",
       "buildNumber": "22",
       "buildGlobalIdentifier": "56",
-      "buildUrl": "http://myconcourse-on-us-t3.com/builds/55",
+      "buildUrl": "http://myconcourse-on-US1-QA-T3.com/builds/55",
       "failedJobName": "configure-ert"
     }
   }

@@ -8,8 +8,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const index = require('./routes/index');
 const metrics = require('./routes/metrics');
-const regions = require('./routes/regions');
-const foundations = require('./routes/foundations');
+const hostlookup = require('./routes/hostlookup');
 
 const app = express();
 
@@ -26,8 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(index);
 app.use(metrics);
-app.use(regions);
-app.use(foundations);
+app.use(hostlookup);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

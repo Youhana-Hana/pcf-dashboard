@@ -40,7 +40,7 @@
         }]
     },
     "environments": [{
-        "id": "us-prod",
+        "id": "DE1-PROD",
         "foundation": "PROD",
         "region": "US",
         "products": {
@@ -58,7 +58,7 @@
           }
         }
     }, {
-        "id": "singapore-prod",
+        "id": "SG1-PROD",
         "foundation": "PROD",
         "region": "Singapore",
         "products": {
@@ -76,7 +76,7 @@
           }
         }
     }, {
-        "id": "us-t3",
+        "id": "US1-QA-T3",
         "foundation": "T3",
         "region": "US",
         "products": {
