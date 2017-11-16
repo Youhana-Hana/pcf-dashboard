@@ -57,22 +57,22 @@ describe('environments', function() {
 const expectedDecoratedDeProd = {
     "foundation": "PROD",
     "region": "DE1",
-    "currentVersionERT": "1.10.13",
+    "currentVersionERT": "1.11.16",
     "stagedVersionERT": "",
     "currentVersionERTInS3": "1.10.17"
 }
 const expectedDecoratedUsQAT3 = {
     "foundation": "T3",
     "region": "US1-QA",
-    "currentVersionERT": "1.10.13",
-    "stagedVersionERT": "",
+    "currentVersionERT": "1.11.18",
+    "stagedVersionERT": "1.11.18",
     "currentVersionERTInS3": "1.10.18"
 }
 const expectedDecoratedSingaporeProd = {
     "foundation": "PROD",
     "region": "SG1",
-    "currentVersionERT": "1.10.12",
-    "stagedVersionERT": "1.10.13",
+    "currentVersionERT": "",
+    "stagedVersionERT": "",
     "currentVersionERTInS3": "1.10.17"
 }
 
