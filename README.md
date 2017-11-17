@@ -65,17 +65,18 @@ NOTE: You can make use of the committed Linux node_modules, in case CI cannot co
 
 **Although node_modules is included (only for the purposes of internetless CI/CD), it's ignored through `.cfignore` as the staging is taking care of installing all dependencies**
 
-* Offline
+#### Offline
 
 Offline is a bit tricky as best practice is to install node modules through `npm` or `yarn`. However there are situations where the internet is not available.
 In our case we created `artifacts` as described in the section below.
 
-* Alternative build approaches to consider when offline
+#### Alternative build approaches to consider when offline
+
   * Enable npmjs.org to install dependencies
   * local-npm
   * Mirroring yarn or npm registry locally
 
-### Artifacts
+#### Artifacts
 All artifacts are stored under the artifacts directory and generated through below command:
 ```sh
 $ npm pack
