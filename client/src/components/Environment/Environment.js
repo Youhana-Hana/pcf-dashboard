@@ -30,10 +30,10 @@ class Environment extends Component {
         <Card className="text-white bg-primary">
           <CardBlock className="card-body pb-0">
             {currentVersionERT ?
-            <CardRow row= {{label:"Current ERT Version", value: this.props.env.currentVersionERT}} key={this.props.env.currentVersionERT}></CardRow> : <CardRow row= {{label:"Current ERT Version", value: "TBC"}}></CardRow>}
+            <CardRow row= {{label:"Current ERT Version", value: this.props.env.currentVersionERT}} key={"currentVersionERT_" + this.props.env.currentVersionERT}></CardRow> : <CardRow row= {{label:"Current ERT Version", value: "TBC"}}></CardRow>}
 
             {stagedVersionERT ?
-            <CardRow row= {{label:"Staged ERT Version", value: this.props.env.stagedVersionERT}} key={this.props.env.stagedVersionERT}></CardRow> : <CardRow row= {{label:"Staged ERT Version", value: "N/A"}}></CardRow>}
+             <CardRow row= {{label:"Staged ERT Version", value: this.props.env.stagedVersionERT}} key={"stagedVersionERT_" + this.props.env.stagedVersionERT}></CardRow> : <CardRow row= {{label:"Staged ERT Version", value: "N/A"}}></CardRow>}
 
           </CardBlock>
         </Card>
