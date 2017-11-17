@@ -68,7 +68,7 @@ NOTE: You can make use of the committed Linux node_modules, in case CI cannot co
 #### Offline
 
 Offline is a bit tricky as best practice is to install node modules through `npm` or `yarn`. However there are situations where the internet is not available.
-In our case we created `artifacts` as described in the section below.
+In our case we created `artifacts` as described in the section below. This was added to prevent runtime errors occurring when deployed to PCF even though staging worked fine.
 
 #### Alternative build approaches to consider when offline
 
