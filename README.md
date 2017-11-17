@@ -20,6 +20,8 @@ Project requires [Node.js](https://nodejs.org/) v4+ to run.
 
 Install the dependencies and devDependencies and start the server.
 
+**checked-in node_modules only work on linux, there are case where it might not work on Windows or Apple. If not on Linux then delete all node_modules and reinstall as described below**
+
 ```sh
 $ cd pcf-automation-status-dashboard
 $ npm i && cd client && npm i && cd ..
@@ -62,14 +64,35 @@ $ cf login
 $ cf push
 ```
 
+### Deployment Instructions
+* Manual
+  *  Clone the repo
+  *  Push it to PCF with `cf push`
+
+**Although node_modules is included (only for the purposes of internetless CI/CD as described below), it's ignored through `.cfignore` as the staging is taking care of installing all dependencies**
+
+* CI/CD
+  *  Clone the Repo
+  *  You can make use of the committed Linux node_modules, in case CI cannot connect to the internet
+
+* Offline
+
+Offline is a bit tricky as best practice is to install node modules through `npm` or `yarn`. However there are situations where the internet is not available.
+In our case we created `artifacts` as described below.
+
+* Alternative build approaches to consider when offline
+  * Enable npmjs.org to install dependencies
+  * local-npm
+  * Mirroring yarn or npm registry locally
+
 ### Artifacts
-All artifacts stored under artifacts directory and generated through below command:
+All artifacts are stored under the artifacts directory and generated through below command:
 ```sh
 $ npm pack
 ```
 
 - Artifacts named as `pcf-automation-status-dashboard-0.0.2.tgz`, where `0.0.2` is the version defined in `package.json`
-- Artifact modules defined inside `package.json` under 'bundledDependencies' section. It's the responsability of the developer to manually keep this section up to date.
+- Artifact modules defined inside `package.json` under 'bundledDependencies' section. It's the responsibility of the developer to manually keep this section up to date.
 
 To use the artifacts, please unpack it, through below command
 
@@ -79,32 +102,11 @@ cd package
 npm start
 ```
 
-### Deployment
-* Manual
-  *  Clone the repo
-  *  Push it to PCF
-
-**Although node_modules is included, it's ignored through `.cfignore` as the staging is taking care of installing all dependencies** 
-
-* CI/CD
-  *  Clone the Repo
-  *  You can make use of node_modules, in case CI cannot connect to the internet
-
-* Offline
-
-Offline is a bit tricky as best practice is to install node modules through `npm` or `yarn`. there are situation where internet is not available.
-In our case we covered through `artifacts` or using checked-in node_modules.
-**checked-in node_modules works on linux, there are case where it might not work on Windows or Apple. in this case delete all node_modules and reinstall them using above commands**
-
-#### Alternatives
-* Enable npmjs.org to install dependencies
-* local-npm
-* Mirroring yarn or npm registry locally
-
-
 ### CI/CD
 
 Build and deploy to PCF with Concourse
+
+NOTE: to build in Concourse without internet access it was necessary to commit the node_modules for linux
 
 Preparing to set the pipeline..
 * Create a local yaml file outside of this repo for config and creds (name it something like `settings.yml`)
