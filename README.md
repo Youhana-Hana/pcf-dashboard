@@ -72,7 +72,7 @@ In our case we created `artifacts` as described in the section below. This was a
 
 #### Alternative build approaches to consider when offline
 
-  * Enable npmjs.org to install dependencies
+  * Enable npmjs.org in proxy to install dependencies
   * local-npm
   * Mirroring yarn or npm registry locally
 
