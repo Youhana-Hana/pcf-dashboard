@@ -20,7 +20,7 @@ Project requires [Node.js](https://nodejs.org/) v4+ to run.
 
 Install the dependencies and devDependencies and start the server.
 
-**checked-in node_modules only work on linux, there are case where it might not work on Windows or Apple. If not on Linux then delete all node_modules and reinstall as described below**
+**checked-in node_modules only work on linux, there are cases where it might not work on Windows or Apple. If not on Linux then delete all node_modules and reinstall as described below**
 
 ```sh
 $ cd pcf-automation-status-dashboard
@@ -53,32 +53,22 @@ run client tests
 $ npm run client test
 ```
 
-For production environments PCF ...
-Please login to your pcf account.
-Update manifest.yaml to change production settings (RAM or storage).
+### Deployment to PCF Instructions
 
-```sh
-$ npm run client clean
-$ npm run client build
-$ cf login
-$ cf push
-```
+Update [manifest.yml](manifest.yml) to required settings (e.g. RAM or storage).
 
-### Deployment Instructions
-* Manual
-  *  Clone the repo
-  *  Push it to PCF with `cf push`
+* Clone the repo
+* build the client i.e. `npm run client build`
+* `cf push` to PCF
 
-**Although node_modules is included (only for the purposes of internetless CI/CD as described below), it's ignored through `.cfignore` as the staging is taking care of installing all dependencies**
+NOTE: You can make use of the committed Linux node_modules, in case CI cannot connect to the internet
 
-* CI/CD
-  *  Clone the Repo
-  *  You can make use of the committed Linux node_modules, in case CI cannot connect to the internet
+**Although node_modules is included (only for the purposes of internetless CI/CD), it's ignored through `.cfignore` as the staging is taking care of installing all dependencies**
 
 * Offline
 
 Offline is a bit tricky as best practice is to install node modules through `npm` or `yarn`. However there are situations where the internet is not available.
-In our case we created `artifacts` as described below.
+In our case we created `artifacts` as described in the section below.
 
 * Alternative build approaches to consider when offline
   * Enable npmjs.org to install dependencies
