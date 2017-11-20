@@ -71,7 +71,7 @@ const expectedDecoratedUsQAT3 = {
 const expectedDecoratedSingaporeProd = {
     "foundation": "PROD",
     "region": "SG1",
-    "currentVersionERT": "",
+    "currentVersionERT": "1.11.16",
     "stagedVersionERT": "",
     "currentVersionERTInS3": "1.10.17"
 }
