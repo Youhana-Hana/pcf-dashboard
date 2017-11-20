@@ -61,37 +61,7 @@ Update [manifest.yml](manifest.yml) to required settings (e.g. RAM or storage).
 * build the client i.e. `npm run client build`
 * `cf push` to PCF
 
-NOTE: You can make use of the committed Linux node_modules, in case CI cannot connect to the internet
-
-**Although node_modules is included (only for the purposes of internetless CI/CD), it's ignored through `.cfignore` as the staging is taking care of installing all dependencies**
-
-#### Offline
-
-Offline is a bit tricky as best practice is to install node modules through `npm` or `yarn`. However there are situations where the internet is not available.
-In our case we created `artifacts` as described in the section below. This was added to prevent runtime errors occurring when deployed to PCF even though staging worked fine.
-
-#### Alternative build approaches to consider when offline
-
-  * Enable npmjs.org in proxy to install dependencies
-  * local-npm
-  * Mirroring yarn or npm registry locally
-
-#### Artifacts
-All artifacts are stored under the artifacts directory and generated through below command:
-```sh
-$ npm pack
-```
-
-- Artifacts named as `pcf-automation-status-dashboard-0.0.2.tgz`, where `0.0.2` is the version defined in `package.json`
-- Artifact modules defined inside `package.json` under 'bundledDependencies' section. It's the responsibility of the developer to manually keep this section up to date.
-
-To use the artifacts, please unpack it, through below command
-
-```sh
-$ tar -xf <PACK PATH>
-cd package
-npm start
-```
+**Although node_modules are committed for linux (only for the purposes of internetless CI/CD), it's ignored through `.cfignore` as the staging is taking care of installing all dependencies**
 
 ### CI/CD
 
