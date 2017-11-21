@@ -57,7 +57,7 @@ describe('environments', function() {
 const expectedDecoratedDeProd = {
     "foundation": "PROD",
     "region": "DE1",
-    "currentVersionERT": "1.11.16",
+    "currentVersionERT": "1.11.16 (fake)",
     "stagedVersionERT": "",
     "currentVersionERTInS3": "1.10.17"
 }
@@ -71,7 +71,7 @@ const expectedDecoratedUsQAT3 = {
 const expectedDecoratedSingaporeProd = {
     "foundation": "PROD",
     "region": "SG1",
-    "currentVersionERT": "1.11.16",
+    "currentVersionERT": "1.11.16 (fake)",
     "stagedVersionERT": "",
     "currentVersionERTInS3": "1.10.17"
 }
