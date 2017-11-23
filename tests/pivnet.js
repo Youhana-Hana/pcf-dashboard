@@ -4,13 +4,6 @@ const expect =  require("chai").expect;
 const sinon = require('sinon');
 const api = require('../lib/api');
 
-const usProdOpsMan = require('../routes/fixtures/DE1-PROD/opsman-api.json');
-const usT3OpsMan = require('../routes/fixtures/US1-QA-T3/opsman-api.json');
-const singaporeProdOpsMan = require('../routes/fixtures/SG1-PROD/opsman-api.json');
-const usProdS3 = require('../routes/fixtures/DE1-PROD/s3-api.json');
-const usT3S3 = require('../routes/fixtures/US1-QA-T3/s3-api.json');
-const singaporeProdS3 = require('../routes/fixtures/SG1-PROD/s3-api.json');
-
 describe('pivnet', function() {
   beforeEach(function() {
     sinon.stub(api, 'get').resolves('[]');
@@ -27,7 +20,7 @@ describe('pivnet', function() {
       done();
     });
   });
-  
+
   it('should call pivent ert runtime endpoint', function(done) {
     pivnet.get(function(err, data) {
       expect(err).to.not.exist;
@@ -50,10 +43,10 @@ describe('pivnet', function() {
       }
     });
   });
-  
+
   it('get top 3 opsManager minor versions', function(done) {
       api.get.onCall(1).resolves(require('./fixtures/opsManagerReleases.json'));
-      
+
       pivnet.get(function(err, data) {
           try {
               expect(api.get.callCount).to.equal(2);
@@ -65,11 +58,11 @@ describe('pivnet', function() {
           }
     });
   });
-  
+
   it('get correct payload', function(done) {
     api.get.onCall(0).resolves(require('./fixtures/ertReleases.json'));
     api.get.onCall(1).resolves(require('./fixtures/opsManagerReleases.json'));
-    
+
     pivnet.get(function(err, data) {
       try {
         const expectedPayload = {
@@ -89,7 +82,7 @@ describe('pivnet', function() {
 it('ert and opsManager releases out of order', function(done) {
   api.get.onCall(0).resolves(require('./fixtures/ertReleases_out_of_order.json'));
   api.get.onCall(1).resolves(require('./fixtures/opsManagerReleases_out_of_order.json'));
-  
+
   pivnet.get(function(err, data) {
     try {
       const expectedPayload = {

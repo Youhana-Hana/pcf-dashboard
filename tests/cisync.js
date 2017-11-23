@@ -12,8 +12,8 @@ describe('cisync', function() {
 
   it('retrieves different results based on item', function(done) {
 
-    const us1QASources = [{url:"https://cisynctester.apps.int.us1.bosch-iot-cloud.com/metrics/source/ops.internal-runtime.int.us1.bosch-iot-cloud.com", name: "opsman-api"},
-                       {url:"https://cisynctester.apps.int.us1.bosch-iot-cloud.com/metrics/source/s3-host", name: "s3-api"}];
+    const us1QACISync = "https://cisynctester.apps.int.us1.bosch-iot-cloud.com/pcf-automation/metrics/source/"
+    const us1QASources = [{url:us1QACISync + "ops.internal-runtime.int.us1.bosch-iot-cloud.com", name: "opsman-api"}];
     const de1ProdSources = [{url:"https://cisynctester.apps.de1.bosch-iot-cloud.com/metrics/source/ops.internal-runtime.int.us1.bosch-iot-cloud.com", name: "opsman-api"},
                        {url:"https://cisynctester.apps.de1.bosch-iot-cloud.com/metrics/source/s3-host", name: "s3-api"}];
     const sg1ProdSources = [{url:"https://cisynctester.apps.sg1.bosch-iot-cloud.com/metrics/source/ops.internal-runtime.int.us1.bosch-iot-cloud.com", name: "opsman-api"},
