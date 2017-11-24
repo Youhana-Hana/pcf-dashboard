@@ -19,9 +19,28 @@ jobs:
         args:
         - -exc
         - |
+          set -e
           cd pcf-automation-status-dashboard
-          npm i && cd client && npm i && cd ..
-          npm run client test
+          npm test
+          echo $?
+  - task: run-client-tests
+    config:
+      platform: linux
+      image_resource:
+        type: docker-image
+        source:
+          repository: node
+      inputs:
+        - name: pcf-automation-status-dashboard
+      run:
+        path: sh
+        args:
+        - -exc
+        - |
+          set -e
+          cd pcf-automation-status-dashboard/client
+          npm test
+          echo $?
 
 - name: build-client-and-deploy-app
   serial: true
@@ -45,9 +64,8 @@ jobs:
         args:
         - -exc
         - |
+          set -e
           cd pcf-automation-status-dashboard
-          npm i && cd client && npm i && cd ..
-          npm run client build
   - put: pcf
     params:
       manifest: pcf-automation-status-dashboard/manifest.yml

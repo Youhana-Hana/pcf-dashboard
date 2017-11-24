@@ -42,7 +42,7 @@ if(process.env.NODE_ENV=="production"){
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
-  const err = new Error('Not Found for $req.originalUrl');
+  const err = new Error('Not Found for ' + req.originalUrl);
   err.status = 404;
   next(err);
 });
