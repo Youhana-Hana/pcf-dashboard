@@ -13,12 +13,11 @@ describe('cisync', function() {
   it('retrieves different results based on item', function(done) {
 
     const us1QACISync = "https://cisynctester.apps.int.us1.bosch-iot-cloud.com/pcf-automation/metrics/source/"
-    const us1QASources = [{url:us1QACISync + "ops.internal-runtime.int.us1.bosch-iot-cloud.com", name: "opsman-api"}];
-    const de1ProdSources = [{url:"https://cisynctester.apps.de1.bosch-iot-cloud.com/metrics/source/ops.internal-runtime.int.us1.bosch-iot-cloud.com", name: "opsman-api"},
-                       {url:"https://cisynctester.apps.de1.bosch-iot-cloud.com/metrics/source/s3-host", name: "s3-api"}];
-    const sg1ProdSources = [{url:"https://cisynctester.apps.sg1.bosch-iot-cloud.com/metrics/source/ops.internal-runtime.int.us1.bosch-iot-cloud.com", name: "opsman-api"},
-                       {url:"https://cisynctester.apps.sg1.bosch-iot-cloud.com/metrics/source/s3-host", name: "s3-api"}];
-
+    const de1ProdCISync = "https://cisynctester.apps.de1.bosch-iot-cloud.com/pcf-automation/metrics/source/"
+    const sg1ProdCISync = "https://cisynctester.apps.sg1.bosch-iot-cloud.com/pcf-automation/metrics/source/"
+    const us1QASources = [{url:us1QACISync + "ops.internal-runtime.int.us1.bosch-iot-cloud.com", name: "opsman-api", mocked:true}];
+    const de1ProdSources = [{url:de1ProdCISync + "ops.internal-runtime.de1.bosch-iot-cloud.com", name: "opsman-api", mocked:true}];
+    const sg1ProdSources = [{url:sg1ProdCISync + "ops.internal-runtime.sg1.bosch-iot-cloud.com", name: "opsman-api", mocked:true}];
 
     const list = [{foundation: "T3", region: "US1-QA", sources:us1QASources},
           {foundation: "PROD", region: "DE1", sources:de1ProdSources},

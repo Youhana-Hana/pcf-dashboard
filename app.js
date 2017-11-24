@@ -27,9 +27,22 @@ app.use(index);
 app.use(metrics);
 app.use(hostlookup);
 
+// Ensure required ENV vars are set
+if(process.env.NODE_ENV=="production"){
+  let requiredEnv = [
+    'CI_SYNC_URL'
+  ];
+  let unsetEnv = requiredEnv.filter((env) => !(typeof process.env[env] !== 'undefined'));
+
+  if (unsetEnv.length > 0) {
+    throw new Error("Required ENV variables are not set: [" + unsetEnv.join(', ') + "]");
+  }
+}
+
+
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
-  const err = new Error('Not Found');
+  const err = new Error('Not Found for $req.originalUrl');
   err.status = 404;
   next(err);
 });

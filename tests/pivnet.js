@@ -21,7 +21,7 @@ describe('pivnet', function() {
     });
   });
 
-  it('should call pivent ert runtime endpoint', function(done) {
+  it('should call pivnet ert releases endpoint', function(done) {
     pivnet.get(function(err, data) {
       expect(err).to.not.exist;
       expect(api.get.args[0][0]).to.equal('https://network.pivotal.io/api/v2/products/elastic-runtime/releases');

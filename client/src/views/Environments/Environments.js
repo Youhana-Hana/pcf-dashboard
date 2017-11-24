@@ -36,12 +36,11 @@ class Environments extends Component {
 
   componentDidMount() {
     PcfAutomationStatusActions.loadPcfAutomationStatus(API_URL, PcfAutomationStatusConstants.RECEIVE_PAYLOAD_ENVIRONMENTS);
-
   }
 
   componentWillMount() {
     EnvStore.addChangeListener(this.onChange);
-    this.interval = setInterval(this.tick.bind(this), PcfAutomationStatusConstants.REFRESH_TIME_INTERVAL);
+    this.interval = setInterval(this.tick.bind(this), PcfAutomationStatusConstants.REFRESH_TIME_INTERVAL_ENVIRONMENTS);
   }
 
   componentWillUnmount() {
@@ -57,7 +56,7 @@ class Environments extends Component {
       loaded: EnvStore.getEnvironments().length != 0
     });
   }
-  
+
   getContent() {
     if (!this.state.loaded) {
       return (

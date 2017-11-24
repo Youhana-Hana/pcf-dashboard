@@ -20,14 +20,40 @@ describe('environments', function() {
     cisync.get.restore();
   })
 
-  it('should call cisync', function(done) {
-
+  it('should call real cisync for qa and mock cisync for all others when NODE_ENV = production', function(done) {
+    let storedNodeEnv = process.env['NODE_ENV']
+    let storedCISyncUrl = process.env['CI_SYNC_URL']
+    process.env['NODE_ENV'] = 'production';
+    process.env['CI_SYNC_URL'] = "https://cisynctester.apps.int.us1.bosch-iot-cloud.com/pcf-automation/metrics/source/";
     environments.get(function() {
       expect(cisync.get.callCount).to.equal(3);
-      expect(cisync.get.args[0][0]).to.deep.equal({url:"https://cisynctester.apps.int.us1.bosch-iot-cloud.com/pcf-automation/metrics/source/ops.internal-runtime.int.us1.bosch-iot-cloud.com", name: "opsman-api"});
+      expect(cisync.get.args[0][0]).to.have.a.property('mocked', false);
+      expect(cisync.get.args[1][0]).to.have.a.property('mocked', true);
+      expect(cisync.get.args[1][0]).to.have.a.property('mocked', true);
       done();
     })
 
+    process.env['NODE_ENV'] = storedNodeEnv
+    process.env['CI_SYNC_URL'] = storedCISyncUrl
+
+  })
+
+  it('should call mock cisync for all when NODE_ENV != production', function(done) {
+
+    let storedNodeEnv = process.env['NODE_ENV']
+    let storedCISyncUrl = process.env['CI_SYNC_URL']
+    process.env['NODE_ENV'] = 'development';
+    delete process.env.CI_SYNC_URL
+    environments.get(function() {
+      expect(cisync.get.callCount).to.equal(3);
+      expect(cisync.get.args[0][0]).to.have.a.property('mocked', true);
+      expect(cisync.get.args[1][0]).to.have.a.property('mocked', true);
+      expect(cisync.get.args[1][0]).to.have.a.property('mocked', true);
+      done();
+    })
+
+    process.env['NODE_ENV'] = storedNodeEnv
+    process.env['CI_SYNC_URL'] = storedCISyncUrl
   })
 
   it('aggregate all environments', function(done) {

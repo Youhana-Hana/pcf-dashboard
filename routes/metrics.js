@@ -1,13 +1,14 @@
 'use strict';
 
 const express = require('express');
-const pivent = require('../lib/pivnet');
+const pivnet = require('../lib/pivnet');
 const environments = require('../lib/environments');
 const NodeCache = require('node-cache');
 const cache = new NodeCache();
 
 const router = express.Router();
-const ttl = 60 * 60;
+const ttlPivnet = 60 * 60;
+const ttlEnvironments = 10;
 
 router.get('/metrics/pivnet', (req, res) => {
   const key = 'pivnet';
@@ -17,11 +18,11 @@ router.get('/metrics/pivnet', (req, res) => {
     return res.json(value).status(200);
   }
 
-  return pivent.get((err, data) => {
+  return pivnet.get((err, data) => {
     if(err) {
       return res.status(500).json({error: err, message: 'Error getting pivnet'});
     }
-    cache.set(key, data, ttl);
+    cache.set(key, data, ttlPivnet);
     return res.json(data);
   });
 });
@@ -31,15 +32,16 @@ router.get('/metrics/environments', (req, res) => {
 
   let value = cache.get(key);
   if (value) {
+    console.log("Using cached version of environments...")
     return res.json(value).status(200);
   }
-
+  console.log("Refreshing environments...")
   return environments.get(function(err, data) {
     if(err) {
       return res.status(500).json({error: err, message: 'Error getting environments'});
     }
 
-    cache.set(key, data, ttl);
+    cache.set(key, data, ttlEnvironments);
     return res.json(data);
   });
 });
