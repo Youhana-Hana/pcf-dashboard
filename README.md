@@ -55,11 +55,11 @@ $ npm run client test
 
 ### Deployment to PCF Instructions
 
-Update [manifest.yml](manifest.yml) to required settings (e.g. RAM or storage).
-
 * Clone the repo
+  * (optional) Update [manifest.yml](manifest.yml) to required settings (e.g. RAM or storage).
 * build the client i.e. `npm run client build`
 * `cf push` to PCF
+* `cf set-env QA_T3_URL $SPECIFIC_ENVIRONMENT_DATA_URL_FOR_QA_T3` i.e. CISync
 
 **Although node_modules are committed for linux (only for the purposes of internetless CI/CD), it's ignored through `.cfignore` as the staging is taking care of installing all dependencies**
 
