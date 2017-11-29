@@ -1,74 +1,49 @@
 const environments = require('../lib/environments.js');
-const deProdOpsMan = require('../routes/fixtures/DE1-PROD/opsman-api.json');
 const usQAT3OpsMan = require('../routes/fixtures/US1-QA-T3/opsman-api.json');
-const singaporeProdOpsMan = require('../routes/fixtures/SG1-PROD/opsman-api.json');
 const mocha =  require("mocha");
 const expect =  require("chai").expect;
 const sinon = require('sinon');
-const cisync = require('../lib/cisync');
+const api = require('../lib/api');
 
 describe('environments', function() {
 
   beforeEach(function() {
-    sinon.stub(cisync, 'get')
-    cisync.get.onCall(0).yields(null, usQAT3OpsMan);
-    cisync.get.onCall(1).yields(null, deProdOpsMan);
-    cisync.get.onCall(2).yields(null, singaporeProdOpsMan);
+    sinon.stub(api, 'get')
+    api.get.onCall(0).resolves(usQAT3OpsMan);
+    process.env['QA_T3_URL'] = 'https://fake.url'
   });
 
   afterEach(function() {
-    cisync.get.restore();
+    api.get.restore();
+    delete process.env.QA_T3_URL
   })
 
-  it('should call real cisync for qa and mock cisync for all others when NODE_ENV = production', function(done) {
-    let storedNodeEnv = process.env['NODE_ENV']
-    let storedCISyncUrl = process.env['CI_SYNC_URL']
-    process.env['NODE_ENV'] = 'production';
-    process.env['CI_SYNC_URL'] = "https://cisynctester.apps.int.us1.bosch-iot-cloud.com/pcf-automation/metrics/source/";
-    environments.get(function() {
-      expect(cisync.get.callCount).to.equal(3);
-      expect(cisync.get.args[0][0]).to.have.a.property('mocked', false);
-      expect(cisync.get.args[1][0]).to.have.a.property('mocked', true);
-      expect(cisync.get.args[1][0]).to.have.a.property('mocked', true);
-      done();
-    })
-
-    process.env['NODE_ENV'] = storedNodeEnv
-    process.env['CI_SYNC_URL'] = storedCISyncUrl
-
-  })
-
-  it('should call mock cisync for all when NODE_ENV != production', function(done) {
-
-    let storedNodeEnv = process.env['NODE_ENV']
-    let storedCISyncUrl = process.env['CI_SYNC_URL']
-    process.env['NODE_ENV'] = 'development';
-    delete process.env.CI_SYNC_URL
-    environments.get(function() {
-      expect(cisync.get.callCount).to.equal(3);
-      expect(cisync.get.args[0][0]).to.have.a.property('mocked', true);
-      expect(cisync.get.args[1][0]).to.have.a.property('mocked', true);
-      expect(cisync.get.args[1][0]).to.have.a.property('mocked', true);
-      done();
-    })
-
-    process.env['NODE_ENV'] = storedNodeEnv
-    process.env['CI_SYNC_URL'] = storedCISyncUrl
-  })
-
-  it('aggregate all environments', function(done) {
+  it('aggregate all environments and should call real API for qa and mock the response for all others', function(done) {
+    var expectedNoOfResponses = 3;
+    var expectedNoOfAPICalls = 1;
     environments.get(function(err, data) {
-      expect(data.environments.length).to.equal(3);
+      expect(data.environments.length).to.equal(expectedNoOfResponses);
       expect(data).to.deep.equal(expectedAggregate);
+      expect(api.get.callCount).to.equal(expectedNoOfAPICalls);
       done();
     })
   })
 
   it('decorates the json with region and foundation', function(done) {
-    const expected = usQAT3OpsMan;
     environments.get(function(err, data) {
-
-      expect(data.environments[0]).to.deep.equal(expectedDecoratedUsQAT3);
+      // one api call to api.get which happens last
+      expect(data.environments[2]).to.deep.equal(expectedDecoratedUsQAT3);
+      done();
+    })
+  })
+  it('will stub the API response if env var not set', function(done) {
+    delete process.env.QA_T3_URL
+    var expectedNoOfResponses = 3;
+    var expectedNoOfAPICalls = 0;
+    environments.get(function(err, data) {
+      expect(data.environments.length).to.equal(expectedNoOfResponses);
+      expect(data).to.deep.equal(expectedAggregate);
+      expect(api.get.callCount).to.equal(expectedNoOfAPICalls);
       done();
     })
   })
@@ -83,8 +58,8 @@ const expectedDecoratedDeProd = {
 const expectedDecoratedUsQAT3 = {
     "foundation": "T3",
     "region": "US1-QA",
-    "currentVersionERT": "1.11.18",
-    "stagedVersionERT": "1.11.18"
+    "currentVersionERT": "1.11.18 (fake)",
+    "stagedVersionERT": "1.11.18 (fake)"
 }
 const expectedDecoratedSingaporeProd = {
     "foundation": "PROD",
@@ -94,5 +69,5 @@ const expectedDecoratedSingaporeProd = {
 }
 
 const expectedAggregate = {
-    environments: [expectedDecoratedUsQAT3, expectedDecoratedDeProd, expectedDecoratedSingaporeProd]
+    environments: [expectedDecoratedDeProd, expectedDecoratedSingaporeProd, expectedDecoratedUsQAT3]
 }
