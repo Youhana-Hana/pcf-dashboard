@@ -12,6 +12,8 @@ const hostlookup = require('./routes/hostlookup');
 
 const app = express();
 
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+
 app.use(cors());
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
