@@ -1,7 +1,18 @@
 # PCF-automation-status-dashboard
-This project created to enable two functionalities:
- - API Gateway
+
+The dashboard covers
+- Product versions from Pivnet (labelled Pivnet in the UI)
+- Product versions as deployed to OpsMan across all environments (labelled Environments in the UI)
+
+This project is divided into two components:
+ - The Back End (or API Gateway)
  - Dashboard UI
+
+The API Gateway can provide a combination of real and stubbed responses. However, for MVP there is only one real response available for QA T3 and so initially the dashboard only supports that specific actual API call. The remaining data is stubbed.
+
+For real data, set the environment variable `QA_T3_URL` to the GET endpoint which provides the required json response e.g. `export QA_T3_URL='https://cisynctester.apps.int.us1.bosch-iot-cloud.com/pcf-automation/metrics/source/ops.internal-runtime.int.us1.bosch-iot-cloud.com'`
+
+Currently, if the env var is not set, the data will be stubbed.
 
 ### Tech
 Project uses a number of open source projects to work properly:
