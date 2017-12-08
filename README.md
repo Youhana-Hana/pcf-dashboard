@@ -14,6 +14,15 @@ For real data, set the environment variable `QA_T3_URL` to the GET endpoint whic
 
 Currently, if the env var is not set, the data will be stubbed.
 
+The refresh rate is configurable from client/src/constants/PcfAutomationStatus.js
+
+```
+Pivnet:
+REFRESH_TIME_INTERVAL: 3600000,
+Environments:
+REFRESH_TIME_INTERVAL_ENVIRONMENTS: 20000
+```
+
 ### Tech
 Project uses a number of open source projects to work properly:
 #### API Gateway
