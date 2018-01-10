@@ -30,7 +30,7 @@ describe('pivnet', function() {
   });
 
   it('get top 3 minor versions', function(done) {
-    api.get.resolves(require('./fixtures/ertReleases.json'));
+    api.get.resolves(require('./fixtures/ert-releases.json'));
 
     pivnet.get(function(err, data) {
       try {
@@ -45,7 +45,7 @@ describe('pivnet', function() {
   });
 
   it('get top 3 opsManager minor versions', function(done) {
-      api.get.onCall(1).resolves(require('./fixtures/opsManagerReleases.json'));
+      api.get.onCall(1).resolves(require('./fixtures/ops-manager-releases.json'));
 
       pivnet.get(function(err, data) {
           try {
@@ -60,8 +60,8 @@ describe('pivnet', function() {
   });
 
   it('get correct payload', function(done) {
-    api.get.onCall(0).resolves(require('./fixtures/ertReleases.json'));
-    api.get.onCall(1).resolves(require('./fixtures/opsManagerReleases.json'));
+    api.get.onCall(0).resolves(require('./fixtures/ert-releases.json'));
+    api.get.onCall(1).resolves(require('./fixtures/ops-manager-releases.json'));
 
     pivnet.get(function(err, data) {
       try {
@@ -80,14 +80,14 @@ describe('pivnet', function() {
   });
 
 it('ert and opsManager releases out of order', function(done) {
-  api.get.onCall(0).resolves(require('./fixtures/ertReleases_out_of_order.json'));
-  api.get.onCall(1).resolves(require('./fixtures/opsManagerReleases_out_of_order.json'));
+  api.get.onCall(0).resolves(require('./fixtures/ert-releases-out-of-order.json'));
+  api.get.onCall(1).resolves(require('./fixtures/ops-manager-releases-out-of-order.json'));
 
   pivnet.get(function(err, data) {
     try {
       const expectedPayload = {
         pivnet: {
-          ertVersions: expectedErtVersions,
+          ertVersions: expectedErtVersionsOutOfOrder,
           opsManagerVersions: expectedOpsManagerVersions
         }};
 
@@ -98,13 +98,34 @@ it('ert and opsManager releases out of order', function(done) {
     }
   });
 });
+    
+    it('ert and opsManager releases 2.0', function(done) {
+        api.get.onCall(0).resolves(require('./fixtures/ert-releases-2.0.json'));
+        api.get.onCall(1).resolves(require('./fixtures/ops-manager-releases-2.0.json'));
+
+        pivnet.get(function(err, data) {
+            try {
+                const expectedPayload = {
+                    pivnet: {
+                        ertVersions: expectedErtVersions20,
+                        opsManagerVersions: expectedOpsManagerVersions20
+                    }};
+
+                expect(data).to.deep.equal(expectedPayload);
+                return done(err);
+            } catch(err) {
+                return done(err);
+            }
+        });
+    });
 });
+
 const expectedErtVersions = [{
       "id": "ert-1.12.*",
       "latest": "1.12.4",
       "releaseDate": "2017-10-12",
       "supportEndDate": "2018-06-30",
-      "releaseNotesUrl": "https://docs.pivotal.io/pivotalcf/1.12/pcf-release-notes/runtime-rn.html#1.12.4"
+      "releaseNotesUrl": "https://docs.pivotal.io/pivotalcf/1-12/pcf-release-notes/runtime-rn.html#1.12.4"
     }, {
       "id": "ert-1.11.*",
       "latest": "1.11.16",
@@ -118,6 +139,46 @@ const expectedErtVersions = [{
       "supportEndDate": "2017-12-31",
       "releaseNotesUrl": "https://docs.pivotal.io/pivotalcf/1-10/pcf-release-notes/runtime-rn.html#1.10.30"
     }];
+
+const expectedErtVersionsOutOfOrder = [{
+    "id": "ert-2.0.*",
+    "latest": "2.0.0",
+    "releaseDate": "2017-12-19",
+    "supportEndDate": "2018-03-31",
+    "releaseNotesUrl": "https://docs.pivotal.io/pivotalcf/2-0/pcf-release-notes/runtime-rn.html#2.0.0"
+},{
+    "id": "ert-1.12.*",
+    "latest": "1.12.4",
+    "releaseDate": "2017-10-12",
+    "supportEndDate": "2018-06-30",
+    "releaseNotesUrl": "https://docs.pivotal.io/pivotalcf/1-12/pcf-release-notes/runtime-rn.html#1.12.4"
+}, {
+    "id": "ert-1.11.*",
+    "latest": "1.11.16",
+    "releaseDate": "2017-10-12",
+    "supportEndDate": "2018-03-31",
+    "releaseNotesUrl": "https://docs.pivotal.io/pivotalcf/1-11/pcf-release-notes/runtime-rn.html#1.11.16"
+}];
+
+const expectedErtVersions20 = [{
+    "id": "ert-2.0.*",
+    "latest": "2.0.0",
+    "releaseDate": "2017-12-13",
+    "supportEndDate": "2018-09-30",
+    "releaseNotesUrl": "https://docs.pivotal.io/pivotalcf/2-0/pcf-release-notes/runtime-rn.html#2.0.0"
+}, {
+    "id": "ert-1.12.*",
+    "latest": "1.12.9",
+    "releaseDate": "2017-12-09",
+    "supportEndDate": "2018-06-30",
+    "releaseNotesUrl": "https://docs.pivotal.io/pivotalcf/1-12/pcf-release-notes/runtime-rn.html#1.12.9"
+}, {
+    "id": "ert-1.11.*",
+    "latest": "1.11.21",
+    "releaseDate": "2017-12-09",
+    "supportEndDate": "2018-03-31",
+    "releaseNotesUrl": "https://docs.pivotal.io/pivotalcf/1-11/pcf-release-notes/runtime-rn.html#1.11.21"
+}];
 
 const expectedOpsManagerVersions = [{
       "id": "opsman-1.12.*",
@@ -138,3 +199,23 @@ const expectedOpsManagerVersions = [{
       "supportEndDate": "2017-12-31",
         "releaseNotesUrl": "https://docs.pivotal.io/pivotalcf/1-10/pcf-release-notes/opsmanager-rn.html#1.10.17"
     }];
+
+const expectedOpsManagerVersions20 = [{
+    "id": "opsman-2.0.*",
+    "latest": "2.0.2",
+    "releaseDate": "2018-01-08",
+    "supportEndDate": "2018-09-15",
+    "releaseNotesUrl": "https://docs.pivotal.io/pivotalcf/2-0/pcf-release-notes/opsmanager-rn.html#2.0.2"
+},{
+    "id": "opsman-1.12.*",
+    "latest": "1.12.9",
+    "releaseDate": "2017-12-28",
+    "supportEndDate": "2018-06-15",
+    "releaseNotesUrl": "https://docs.pivotal.io/pivotalcf/1-12/pcf-release-notes/opsmanager-rn.html#1.12.9"
+}, {
+    "id": "opsman-1.11.*",
+    "latest": "1.11.18",
+    "releaseDate": "2017-12-28",
+    "supportEndDate": "2018-03-31",
+    "releaseNotesUrl": "https://docs.pivotal.io/pivotalcf/1-11/pcf-release-notes/opsmanager-rn.html#1.11.18"
+}];
