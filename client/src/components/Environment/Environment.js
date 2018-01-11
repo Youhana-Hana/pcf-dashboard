@@ -15,12 +15,27 @@ import CardRow from '../CardRow/';
 
 class Environment extends Component {
 
-  render() {
-    let stagedVersionERT = this.props.env.stagedVersionERT;
-    let currentVersionERT = this.props.env.currentVersionERT;
+  getRowContent(key, label, defaultValue) {
+    let value = this.props.env[key];
+    if(value) {
+      return (<CardRow row= {{label, value}} key={`${key}_${value}`}></CardRow>);
+    } else {
+      if(defaultValue) {
+        return (<CardRow row= {{label, value: defaultValue}}></CardRow>);
+      } else {
+        return(<p/>);
+      }
+    }
+  }
 
+  render() {
+    let currentVersionERT = this.getRowContent('currentVersionERT', 'Current ERT Version', 'TBC');
+    let stagedVersionERT = this.getRowContent('stagedVersionERT', 'Staged ERT Version', 'N/A');
+
+    let currentVersionOpsManager = this.getRowContent('currentVersionOpsManager', 'Current OpsManager Version', null);
+    let stagedVersionOpsManager = this.getRowContent('stagedVersionOpsManager', 'Staged OpsManager Version', null);
     return (
-      <Col xs="12" sm="6" lg="4">
+      <Col xs="12" sm="8" lg="4">
         <CardHeader>
           <h2 className="mb-0">
             {this.props.env.region} {this.props.env.foundation}
@@ -28,13 +43,11 @@ class Environment extends Component {
         </CardHeader>
 
         <Card className="text-white bg-primary">
-          <CardBlock className="card-body pb-0">
-            {currentVersionERT ?
-            <CardRow row= {{label:"Current ERT Version", value: this.props.env.currentVersionERT}} key={"currentVersionERT_" + this.props.env.currentVersionERT}></CardRow> : <CardRow row= {{label:"Current ERT Version", value: "TBC"}}></CardRow>}
-
-            {stagedVersionERT ?
-             <CardRow row= {{label:"Staged ERT Version", value: this.props.env.stagedVersionERT}} key={"stagedVersionERT_" + this.props.env.stagedVersionERT}></CardRow> : <CardRow row= {{label:"Staged ERT Version", value: "N/A"}}></CardRow>}
-
+        <CardBlock className="card-body pb-0">
+        {currentVersionERT}
+      {stagedVersionERT}
+      {currentVersionOpsManager}
+      {stagedVersionOpsManager}
           </CardBlock>
         </Card>
       </Col>

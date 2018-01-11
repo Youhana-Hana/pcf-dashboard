@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test to see if the environment renders correctly 1`] = `
+exports[`test ERT Version only 1`] = `
 <div
-  className="col-12 col-sm-6 col-lg-4"
+  className="col-12 col-sm-8 col-lg-4"
 >
   <div
     className="card-header"
@@ -10,9 +10,7 @@ exports[`test to see if the environment renders correctly 1`] = `
     <h2
       className="mb-0"
     >
-      US
        
-      T3
     </h2>
   </div>
   <div
@@ -25,17 +23,17 @@ exports[`test to see if the environment renders correctly 1`] = `
         className="padding-10 row"
       >
         <div
-          className="col-12 col-sm-6 col-lg-7"
+          className="col-12 col-sm-6 col-lg-8"
         >
           <h3>
             Current ERT Version
           </h3>
         </div>
         <div
-          className="col-12 col-sm-6 col-lg-5"
+          className="col-10 col-sm-6 col-lg-4"
         >
           <h3>
-            TBC
+            1.10.13
           </h3>
         </div>
       </div>
@@ -43,17 +41,115 @@ exports[`test to see if the environment renders correctly 1`] = `
         className="padding-10 row"
       >
         <div
-          className="col-12 col-sm-6 col-lg-7"
+          className="col-12 col-sm-6 col-lg-8"
         >
           <h3>
             Staged ERT Version
           </h3>
         </div>
         <div
-          className="col-12 col-sm-6 col-lg-5"
+          className="col-10 col-sm-6 col-lg-4"
+        >
+          <h3>
+            1.11.23
+          </h3>
+        </div>
+      </div>
+      <p />
+      <p />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`test to see if the environment renders correctly 1`] = `
+<div
+  className="col-12 col-sm-8 col-lg-4"
+>
+  <div
+    className="card-header"
+  >
+    <h2
+      className="mb-0"
+    >
+       
+    </h2>
+  </div>
+  <div
+    className="text-white bg-primary card"
+  >
+    <div
+      className="card-body pb-0 card-block"
+    >
+      <div
+        className="padding-10 row"
+      >
+        <div
+          className="col-12 col-sm-6 col-lg-8"
+        >
+          <h3>
+            Current ERT Version
+          </h3>
+        </div>
+        <div
+          className="col-10 col-sm-6 col-lg-4"
+        >
+          <h3>
+            1.10.13
+          </h3>
+        </div>
+      </div>
+      <div
+        className="padding-10 row"
+      >
+        <div
+          className="col-12 col-sm-6 col-lg-8"
+        >
+          <h3>
+            Staged ERT Version
+          </h3>
+        </div>
+        <div
+          className="col-10 col-sm-6 col-lg-4"
         >
           <h3>
             N/A
+          </h3>
+        </div>
+      </div>
+      <div
+        className="padding-10 row"
+      >
+        <div
+          className="col-12 col-sm-6 col-lg-8"
+        >
+          <h3>
+            Current OpsManager Version
+          </h3>
+        </div>
+        <div
+          className="col-10 col-sm-6 col-lg-4"
+        >
+          <h3>
+            1.11.11
+          </h3>
+        </div>
+      </div>
+      <div
+        className="padding-10 row"
+      >
+        <div
+          className="col-12 col-sm-6 col-lg-8"
+        >
+          <h3>
+            Staged OpsManager Version
+          </h3>
+        </div>
+        <div
+          className="col-10 col-sm-6 col-lg-4"
+        >
+          <h3>
+            1.12.12
           </h3>
         </div>
       </div>

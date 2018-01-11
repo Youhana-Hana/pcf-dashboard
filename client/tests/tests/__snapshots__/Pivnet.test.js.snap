@@ -19,14 +19,14 @@ exports[`test to see if renders correctly 1`] = `
         className="padding-10 row"
       >
         <div
-          className="col-12 col-sm-6 col-lg-7"
+          className="col-12 col-sm-6 col-lg-8"
         >
           <h3>
             ert-1.11.*
           </h3>
         </div>
         <div
-          className="col-12 col-sm-6 col-lg-5"
+          className="col-10 col-sm-6 col-lg-4"
         >
           <h3>
             <a
@@ -43,14 +43,14 @@ exports[`test to see if renders correctly 1`] = `
         className="padding-10 row"
       >
         <div
-          className="col-12 col-sm-6 col-lg-7"
+          className="col-12 col-sm-6 col-lg-8"
         >
           <h3>
             ert-1.10.*
           </h3>
         </div>
         <div
-          className="col-12 col-sm-6 col-lg-5"
+          className="col-10 col-sm-6 col-lg-4"
         >
           <h3>
             <a
@@ -67,14 +67,14 @@ exports[`test to see if renders correctly 1`] = `
         className="padding-10 row"
       >
         <div
-          className="col-12 col-sm-6 col-lg-7"
+          className="col-12 col-sm-6 col-lg-8"
         >
           <h3>
             ert-1.9.*
           </h3>
         </div>
         <div
-          className="col-12 col-sm-6 col-lg-5"
+          className="col-10 col-sm-6 col-lg-4"
         >
           <h3>
             <a

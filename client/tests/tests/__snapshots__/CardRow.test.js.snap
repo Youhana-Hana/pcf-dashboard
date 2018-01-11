@@ -1,16 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`test CardRow without URL 1`] = `
+<div
+  className="padding-10 row"
+>
+  <div
+    className="col-12 col-sm-6 col-lg-8"
+  >
+    <h3 />
+  </div>
+  <div
+    className="col-10 col-sm-6 col-lg-4"
+  >
+    <h3>
+      VALUE
+    </h3>
+  </div>
+</div>
+`;
+
 exports[`test to see if the row renders correctly 1`] = `
 <div
   className="padding-10 row"
 >
   <div
-    className="col-12 col-sm-6 col-lg-7"
+    className="col-12 col-sm-6 col-lg-8"
   >
     <h3 />
   </div>
   <div
-    className="col-12 col-sm-6 col-lg-5"
+    className="col-10 col-sm-6 col-lg-4"
   >
     <h3>
       <a
@@ -20,26 +39,6 @@ exports[`test to see if the row renders correctly 1`] = `
       >
         VALUE
       </a>
-    </h3>
-  </div>
-</div>
-`;
-
-
-exports[`test CardRow without URL 1`] = `
-<div
-  className="padding-10 row"
->
-  <div
-    className="col-12 col-sm-6 col-lg-7"
-  >
-    <h3 />
-  </div>
-  <div
-    className="col-12 col-sm-6 col-lg-5"
-  >
-    <h3>
-      VALUE
     </h3>
   </div>
 </div>
