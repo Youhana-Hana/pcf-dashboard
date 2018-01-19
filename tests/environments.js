@@ -15,38 +15,46 @@ describe('environments', function() {
   afterEach(function() {
     api.get.restore();
     delete process.env.QA_T3_URL;
-  })
+  });
 
   it('aggregate all environments and should call real API for qa and mock the response for all others', function(done) {
     var expectedNoOfResponses = 3;
     var expectedNoOfAPICalls = 1;
     environments.get(function(err, data) {
-      expect(data.environments.length).to.equal(expectedNoOfResponses);
-      expect(data).to.deep.equal(expectedAggregate);
-      expect(api.get.callCount).to.equal(expectedNoOfAPICalls);
-      done();
-    })
-  })
+      try {
+        expect(data.environments.length).to.equal(expectedNoOfResponses);
+        expect(data).to.deep.equal(expectedAggregate);
+        expect(api.get.callCount).to.equal(expectedNoOfAPICalls);
+        return done(err);
+      } catch(err) {
+        return done(err);
+      }
+    });
+  });
 
   it('decorates the json with region and foundation', function(done) {
     environments.get(function(err, data) {
       // one api call to api.get which happens last
       expect(data.environments[2]).to.deep.equal(expectedDecoratedUsQAT3);
       done();
-    })
-  })
+    });
+  });
   
   it('will stub the API response if env var not set', function(done) {
-    delete process.env.QA_T3_URL
+    delete process.env.QA_T3_URL;
     var expectedNoOfResponses = 3;
     var expectedNoOfAPICalls = 0;
     environments.get(function(err, data) {
-      expect(data.environments.length).to.equal(expectedNoOfResponses);
-      expect(data).to.deep.equal(expectedAggregate);
-      expect(api.get.callCount).to.equal(expectedNoOfAPICalls);
-      done();
-    })
-  })
+      try {
+        expect(data.environments.length).to.equal(expectedNoOfResponses);
+        expect(data).to.deep.equal(expectedAggregate);
+        expect(api.get.callCount).to.equal(expectedNoOfAPICalls);
+        return done(err);
+      } catch(err) {
+        return done(err);
+      }
+    });
+  });
 
   it('include OpsManager if exists', function(done) {
     const response = {
@@ -59,21 +67,23 @@ describe('environments', function() {
     api.get.onCall(0).resolves(response);
     environments.get(function(err, data) {
       try {
-      // one api call to api.get which happens last
-      expect(data.environments[2]).to.deep.equal(expectedQAIncludingOpsManager);
-      return done(err);
-    } catch(err) {
-      done(err);
-    }
-    })
+        // one api call to api.get which happens last
+        expect(data.environments[2]).to.deep.equal(expectedQAIncludingOpsManager);
+        return done(err);
+      } catch(err) {
+        return done(err);
+      }
+    });
   });
-})
+});
 
 const expectedDecoratedDeProd = {
   "foundation": "PROD",
   "region": "DE1",
   "currentVersionERT": "1.11.16 (fake)",
-  "stagedVersionERT": ""
+  "stagedVersionERT": "",
+  "currentVersionOpsManager": "1.12.10 (fake)",
+  "stagedVersionOpsManager": "1.12.12 (fake)"
 };
 
 const expectedDecoratedUsQAT3 = {
@@ -87,7 +97,9 @@ const expectedDecoratedSingaporeProd = {
   "foundation": "PROD",
   "region": "SG1",
   "currentVersionERT": "1.11.16 (fake)",
-  "stagedVersionERT": ""
+  "stagedVersionERT": "",
+  "currentVersionOpsManager": "1.11.10 (fake)",
+  "stagedVersionOpsManager": ""
 };
 
 const expectedQAIncludingOpsManager = {

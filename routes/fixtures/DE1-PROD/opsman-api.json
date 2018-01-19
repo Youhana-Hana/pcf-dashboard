@@ -1,4 +1,6 @@
 {
   "currentVersionERT": "1.11.16 (fake)",
-  "stagedVersionERT": ""
+  "stagedVersionERT": "",
+  "currentVersionOpsManager": "1.12.10 (fake)",
+  "stagedVersionOpsManager": "1.12.12 (fake)"
 }

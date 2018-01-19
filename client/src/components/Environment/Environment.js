@@ -32,8 +32,8 @@ class Environment extends Component {
     let currentVersionERT = this.getRowContent('currentVersionERT', 'Current ERT Version', 'TBC');
     let stagedVersionERT = this.getRowContent('stagedVersionERT', 'Staged ERT Version', 'N/A');
 
-    let currentVersionOpsManager = this.getRowContent('currentVersionOpsManager', 'Current OpsManager Version', null);
-    let stagedVersionOpsManager = this.getRowContent('stagedVersionOpsManager', 'Staged OpsManager Version', null);
+    let currentVersionOpsManager = this.getRowContent('currentVersionOpsManager', 'Current OpsManager Version', "TBC");
+    let stagedVersionOpsManager = this.getRowContent('stagedVersionOpsManager', 'Staged OpsManager Version', "N/A");
     return (
       <Col xs="12" sm="8" lg="4">
         <CardHeader>

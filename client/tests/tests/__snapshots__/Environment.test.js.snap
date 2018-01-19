@@ -55,8 +55,42 @@ exports[`test ERT Version only 1`] = `
           </h3>
         </div>
       </div>
-      <p />
-      <p />
+      <div
+        className="padding-10 row"
+      >
+        <div
+          className="col-12 col-sm-6 col-lg-8"
+        >
+          <h3>
+            Current OpsManager Version
+          </h3>
+        </div>
+        <div
+          className="col-10 col-sm-6 col-lg-4"
+        >
+          <h3>
+            TBC
+          </h3>
+        </div>
+      </div>
+      <div
+        className="padding-10 row"
+      >
+        <div
+          className="col-12 col-sm-6 col-lg-8"
+        >
+          <h3>
+            Staged OpsManager Version
+          </h3>
+        </div>
+        <div
+          className="col-10 col-sm-6 col-lg-4"
+        >
+          <h3>
+            N/A
+          </h3>
+        </div>
+      </div>
     </div>
   </div>
 </div>
