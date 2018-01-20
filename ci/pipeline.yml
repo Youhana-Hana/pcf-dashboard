@@ -70,7 +70,7 @@ jobs:
     params:
       manifest: pcf-automation-status-dashboard/manifest.yml
       path: pcf-automation-status-dashboard
-      current_app_name: pcf-automation-status-dashboard
+      current_app_name: ((pcf-deploy-name))
 
 resources:
 - name: pcf-automation-status-dashboard
@@ -89,4 +89,3 @@ resources:
     username: ((pcf-deploy-username))
     password: ((pcf-deploy-password))
     skip_cert_check: true
-    current_app_name: ((pcf-deploy-name))
