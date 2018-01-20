@@ -7,3 +7,4 @@ pcf-organization:
 pcf-space:
 pcf-deploy-username:
 pcf-deploy-password:
+pcf-deploy-name: # app name

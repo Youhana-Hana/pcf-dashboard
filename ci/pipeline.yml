@@ -89,3 +89,4 @@ resources:
     username: ((pcf-deploy-username))
     password: ((pcf-deploy-password))
     skip_cert_check: true
+    current_app_name: ((pcf-deploy-name))
