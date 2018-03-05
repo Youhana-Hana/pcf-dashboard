@@ -9,12 +9,12 @@ describe('environments', function() {
   beforeEach(function() {
     sinon.stub(api, 'get');
     api.get.onCall(0).resolves(usQAT3OpsMan);
-    process.env['QA_T3_URL'] = 'https://fake.url';
+    process.env.ENVIRONMENTS = '[{"foundation": "T3", "region": "US1-QA", "url": "https://fake.url"}, {"foundation": "PROD", "region": "DE1"}, {"foundation": "PROD", "region": "SG1"}]';
   });
 
   afterEach(function() {
     api.get.restore();
-    delete process.env.QA_T3_URL;
+    delete process.env.ENVIRONMENTS;
   });
 
   it('aggregate all environments and should call real API for qa and mock the response for all others', function(done) {
@@ -40,15 +40,11 @@ describe('environments', function() {
     });
   });
   
-  it('will stub the API response if env var not set', function(done) {
-    delete process.env.QA_T3_URL;
-    var expectedNoOfResponses = 3;
-    var expectedNoOfAPICalls = 0;
+  it('will return empty array enr env var not set', function(done) {
+    delete process.env.ENVIRONMENTS;
     environments.get(function(err, data) {
       try {
-        expect(data.environments.length).to.equal(expectedNoOfResponses);
-        expect(data).to.deep.equal(expectedAggregate);
-        expect(api.get.callCount).to.equal(expectedNoOfAPICalls);
+        expect(data).to.be.empty;
         return done(err);
       } catch(err) {
         return done(err);
