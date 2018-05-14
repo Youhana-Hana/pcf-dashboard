@@ -8,7 +8,6 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const index = require('./routes/index');
 const metrics = require('./routes/metrics');
-const hostlookup = require('./routes/hostlookup');
 
 const app = express();
 
@@ -27,7 +26,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(index);
 app.use(metrics);
-app.use(hostlookup);
 
 // Ensure required ENV vars are set
 if(process.env.NODE_ENV=="production"){
