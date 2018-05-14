@@ -8,9 +8,9 @@ This project is divided into two components:
  - The Back End (or API Gateway)
  - Dashboard UI
 
-The API Gateway can provide a combination of real and stubbed responses. However, for MVP there is only one real response available for QA T3 and so initially the dashboard only supports that specific actual API call. The remaining data is stubbed.
+The API Gateway can provide a combination of real and stubbed responses.
 
-For real data, set the environment variable `QA_T3_URL` to the GET endpoint which provides the required json response e.g. `export QA_T3_URL='https://cisynctester.apps.int.us1.bosch-iot-cloud.com/pcf-automation/metrics/source/ops.internal-runtime.int.us1.bosch-iot-cloud.com'`
+For real data, set the environment variable `ENVIRONMENTS` to environments array.
 
 Currently, if the env var is not set, the data will be stubbed.
 
@@ -79,7 +79,6 @@ $ npm run client test
   * (optional) Update [manifest.yml](manifest.yml) to required settings (e.g. RAM or storage).
 * build the client i.e. `npm run client build`
 * `cf push` to PCF
-* `cf set-env QA_T3_URL $SPECIFIC_ENVIRONMENT_DATA_URL_FOR_QA_T3` i.e. CISync
 
 **Although node_modules are committed for linux (only for the purposes of internetless CI/CD), it's ignored through `.cfignore` as the staging is taking care of installing all dependencies**
 
